@@ -23,6 +23,11 @@ export default {
   }
 };
 </script>
+<style lang='less'>
+   body{
+     font-size: .34rem;
+   }
+</style>
 <style lang='less' scoped>
 //局部样式
 .box {
@@ -35,9 +40,9 @@ export default {
   ul > li {
     list-style: none;
     background-color: aquamarine;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px 10%;
+    border-radius: .1rem;
+    margin: .2rem;
+    padding: .2rem 10%;
     white-space: nowrap;
    
   }
@@ -47,7 +52,7 @@ export default {
   }
   .rv-block {
     background-color: #eaff56;
-
+     padding: .5rem 0;
   }
 }
 </style>
