@@ -1,4 +1,5 @@
-import './untils/px2rem.js'
+// import './utils/px2rem.js'  //暂时关闭
+import './styles/index.less'
 import myComponent from './components/my-component'
 import myComponent2 from './components/my-component2'
 const components = {

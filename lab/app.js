@@ -1,6 +1,7 @@
 import App from './app.vue'
 import lgView from '../src/index'
 import VueRouter from 'vue-router'
+import '../src/utils/px2rem.js'
 Vue.use(lgView, {
     capture: true
 });

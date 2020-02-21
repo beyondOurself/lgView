@@ -85,7 +85,7 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             title: '',
             template: path.resolve(__dirname, '../lab/app.html'),
-            inject:'app' //标签插入到
+            inject:'body' //标签插入到
         }),
         //自定义全局环境变量
         new webpack.DefinePlugin({

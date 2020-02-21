@@ -1,7 +1,9 @@
 <template>
   <div class="com-one">
-    <div class="test" ref="test"></div>
-    <button class="btn" ref="btn" @click="getWidth">获取</button>
+    <!-- <div class="test" ref="test"></div>
+    <button class="btn" ref="btn" @click="getWidth">获取</button> -->
+    <h1>字体图标</h1>
+    <i class="lg-icon lg-icon-test"></i>
   </div>
 </template>
 <script>
