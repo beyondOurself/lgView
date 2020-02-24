@@ -12,6 +12,8 @@ Vue.use(VueRouter);
 const routes = [
   { path: '/my-component', component: (resolve) => require(['./routers/my-component.vue'], resolve) },
   { path: '/card', component: (resolve) => require(['./routers/card.vue'], resolve) },
+  { path: '/icon', component: (resolve) => require(['./routers/icon.vue'], resolve) },
+  { path: '/tag-area', component: (resolve) => require(['./routers/tag-area.vue'], resolve) },
 ]
 // 3. 创建 router 实例，然后传 `routes` 配置
 const router = new VueRouter({

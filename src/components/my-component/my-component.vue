@@ -1,34 +1,26 @@
 <template>
-  <div class="com-one">
-    <!-- <div class="test" ref="test"></div>
-    <button class="btn" ref="btn" @click="getWidth">获取</button> -->
-    <h1>字体图标</h1>
-    <i style="font-size:1rem" class="lg-icon lg-icon-md-volume-down"></i>
+  <div :class="classes" :style="styles">
+    <h3>测试组件</h3>
   </div>
 </template>
 <script>
+const prefixCls = "";
 export default {
+  name: "",
+  props: {},
   data() {
     return {};
   },
-  methods: {
-      getWidth(){
-          const d = this.$refs.test;
-          alert(window.innerWidth+"======="+window.getComputedStyle(d, null).getPropertyValue('width')) ;
-      }
+  computed: {
+    classes() {
+        return[prefixCls,{}] 
+    },
+    styles() {
+       let style = {}
+
+       return style
+    }
   },
+  methods: {}
 };
 </script>
-<style lang="less">
-.com-one {
-  .test {
-    height: 1rem;
-    width: 1rem;
-    background-color: red;
-  }
-  .btn{
-      font-size: 100%;
-      padding: .25rem .5rem;
-  }
-}
-</style>

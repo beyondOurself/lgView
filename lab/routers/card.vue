@@ -1,6 +1,7 @@
 <template>
     <div>
-        <lg-card></lg-card>
+        <lg-card>普通组</lg-card>
+        <lg-card mar=".5" pad=".5" :styleBox="{backgroundColor:'red'}">测试组</lg-card>
     </div>
 </template>
 <script>

@@ -3,13 +3,19 @@
   <div class="box">
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view class="rv-block"></router-view>
-    <nav>
-      <ul>
+    <nav >
+      <ul >
         <li>
           <router-link to="/my-component">测试组件</router-link>
         </li>
         <li>
           <router-link to="/card">card组件</router-link>
+        </li>
+        <li>
+          <router-link to="/icon">icon组件</router-link>
+        </li>
+        <li>
+          <router-link to="/tag-area">tag-area组件</router-link>
         </li>
       </ul>
     </nav>
@@ -22,11 +28,6 @@ export default {
   }
 };
 </script>
-<style lang='less'>
-body {
-  font-size: 0.34rem;
-}
-</style>
 <style lang='less' >
 //局部样式
 .box {
@@ -35,6 +36,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding:0; 
   }
   ul > li {
     list-style: none;

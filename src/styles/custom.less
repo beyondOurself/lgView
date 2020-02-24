@@ -24,21 +24,22 @@
 @font-size-base         : .32rem;
 @line-height-base       : 1.5;
 @border-radius-base     : .1rem;
+@padding-base:.2rem;
+@margin-base:.2rem;
 
 
 // Border color
-@border-color-base      : #cbc7cc;  // outside
-@border-width-base      : 1px;            // width of the border for a component
-@border-style-base      : solid;          // style of a components border
-
+@border-color-base      : #c8c7cc;  
+@border-width-base      : 1px;      
+@border-style-base      : solid;    
+@border:@border-style-base @border-width-base @border-color-base ;
 
 // Background color
-@background-color-base        : #f7f7f7;  // base
+@background-color-base        : #efeff4;  // base
 
 // Shadow
 @shadow-color           : rgba(0, 0, 0, .2);
 @shadow-base            : @shadow-down;
-@shadow-card            : 0 1px 1px 0 rgba(0,0,0,.3);
 @shadow-up              : 0 -1px 6px @shadow-color;
 @shadow-down            : 0 1px 6px @shadow-color;
 @shadow-left            : -1px 0 6px @shadow-color;
@@ -50,3 +51,13 @@
 @animation-time-quick   : .15s;
 @transition-time        : .2s;
 @ease-in-out            : ease-in-out;
+
+//card 
+@card-margin: @margin-base; 
+@card-padding: @padding-base; 
+@card-bg:@white;
+@card-shadow:0 1px 1px 0 rgba(0,0,0,.3);
+
+//tag-area
+@tag-area-margin:@margin-base; 
+@tag-area-padding:@padding-base;

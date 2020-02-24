@@ -1,0 +1,20 @@
+@tag-area-prefix: ~"@{css-prefix}tag-area";
+
+
+.@{tag-area-prefix} {
+    & {
+        #bundle.BFC();
+        border             : @border;
+        height             : 1rem;
+        margin             : @tag-area-margin;
+        padding            : @tag-area-padding;
+    }
+
+    &-title{
+        font-weight: 600;
+        position: absolute;
+        margin-top: -(@tag-area-padding*2+0.05);
+        margin-left: -2.5rem;
+    }
+
+}

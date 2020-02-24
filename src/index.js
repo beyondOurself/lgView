@@ -1,11 +1,15 @@
 import './utils/px2rem.js' ;
 import './styles/index.less';
-import component from './components/my-component';
-import card from './components/card';
-const comCssPrefix = 'lg';
+import Component from './components/my-component';
+import Card from './components/card';
+import Icon from './components/icon';
+import TagArea from './components/tag-area';
+const comCssPrefix = 'Lg';
 const components = {
-  component,
-  card
+  Component,
+  Card,
+  Icon,
+  TagArea
 }
 const lgView = {
    ...components
@@ -13,8 +17,7 @@ const lgView = {
 const install = function (Vue, opts ={}) {
   if (install.installed) return
   Object.keys(lgView).forEach(key => {
-    console.log(`${comCssPrefix}-${key}`)
-    Vue.component(`${comCssPrefix}-${key}`, lgView[key]);
+    Vue.component(`${comCssPrefix}${key}`, lgView[key]);
   })
 }
 //用于script标签引入 
