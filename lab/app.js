@@ -1,7 +1,7 @@
 import App from './app.vue'
 import lgView from '../src/index'
 import VueRouter from 'vue-router'
-import '../src/utils/px2rem.js'
+// import '../src/utils/px2rem.js'
 Vue.use(lgView, {
     capture: true
 });
@@ -10,8 +10,8 @@ Vue.use(VueRouter);
 
 // 2. 定义路由
 const routes = [
-  { path: '/component1', component: (resolve) => require(['./routers/component1.vue'], resolve) },
-  { path: '/component2', component: (resolve) => require(['./routers/component2.vue'], resolve) }
+  { path: '/my-component', component: (resolve) => require(['./routers/my-component.vue'], resolve) },
+  { path: '/card', component: (resolve) => require(['./routers/card.vue'], resolve) },
 ]
 // 3. 创建 router 实例，然后传 `routes` 配置
 const router = new VueRouter({

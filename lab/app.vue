@@ -6,14 +6,13 @@
     <nav>
       <ul>
         <li>
-          <router-link to="/component1">组件1</router-link>
+          <router-link to="/my-component">测试组件</router-link>
         </li>
         <li>
-          <router-link to="/component2">组件2</router-link>
+          <router-link to="/card">card组件</router-link>
         </li>
       </ul>
     </nav>
-    
   </div>
 </template>
 <script>
@@ -24,11 +23,11 @@ export default {
 };
 </script>
 <style lang='less'>
-   body{
-     font-size: .34rem;
-   }
+body {
+  font-size: 0.34rem;
+}
 </style>
-<style lang='less' scoped>
+<style lang='less' >
 //局部样式
 .box {
   text-align: center;
@@ -40,19 +39,17 @@ export default {
   ul > li {
     list-style: none;
     background-color: aquamarine;
-    border-radius: .1rem;
-    margin: .2rem;
-    padding: .2rem 10%;
+    border-radius: 0.1rem;
+    margin: 0.2rem;
+    padding: 0.2rem 10%;
     white-space: nowrap;
-   
   }
   a {
     text-decoration: none;
-    
   }
   .rv-block {
     background-color: #eaff56;
-     padding: .5rem 0;
+    padding: 0.5rem 0;
   }
 }
 </style>

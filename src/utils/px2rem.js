@@ -11,7 +11,7 @@
             ",maximum-scale=" + scaleValue + ",user-scalable=no");
         var head = document.getElementsByTagName('head')[0];
         head.appendChild(d);
-        head.insertBefore(m, head.firstElementChild);
+        // head.insertBefore(m, head.firstElementChild);
         var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
         d.remove();
         document.documentElement.style.fontSize = window.innerWidth / designWidth * rem2px / defaultFontSize * 100 + '%';
