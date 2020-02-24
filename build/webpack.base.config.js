@@ -28,19 +28,20 @@ module.exports = {
                 )
             }
             ,
+            
             { //加载图片
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: [
                     'file-loader'
                 ]
             },
             { //加载字体
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192  
+                            limit: 1556222  
                         }
                     }
                 ]

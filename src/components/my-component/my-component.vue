@@ -3,7 +3,7 @@
     <!-- <div class="test" ref="test"></div>
     <button class="btn" ref="btn" @click="getWidth">获取</button> -->
     <h1>字体图标</h1>
-    <i class="lg-icon lg-icon-test"></i>
+    <i style="font-size:1rem" class="lg-icon lg-icon-md-volume-down"></i>
   </div>
 </template>
 <script>
