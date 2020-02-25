@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <lg-component></lg-component>
-    <hr />
+    <div>
+        <lg-button></lg-button>
+        <hr />
     <lg-table :data="datas"></lg-table>
-  </div>
+    </div>
 </template>
 <script>
 export default {

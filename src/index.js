@@ -3,13 +3,19 @@ import './styles/index.less';
 import Component from './components/my-component';
 import Card from './components/card';
 import Icon from './components/icon';
+import Button from './components/button';
+import Table from './components/table';
 import TagArea from './components/tag-area';
+import Layout from './components/layout';
 const comCssPrefix = 'Lg';
 const components = {
   Component,
   Card,
   Icon,
-  TagArea
+  TagArea,
+  Button,
+  Table,
+  Layout
 }
 const lgView = {
    ...components

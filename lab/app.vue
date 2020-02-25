@@ -4,9 +4,9 @@
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view class="rv-block"></router-view>
     <nav >
-      <ul >
+      <ul class="box-ul" >
         <li>
-          <router-link to="/my-component">测试组件</router-link>
+          <router-link to="/myComponent">测试组件</router-link>
         </li>
         <li>
           <router-link to="/card">card组件</router-link>
@@ -15,7 +15,16 @@
           <router-link to="/icon">icon组件</router-link>
         </li>
         <li>
-          <router-link to="/tag-area">tag-area组件</router-link>
+          <router-link to="/tagArea">tag-area组件</router-link>
+        </li>
+        <li>
+          <router-link to="/button">button组件</router-link>
+        </li>
+        <li>
+          <router-link to="/table">table组件</router-link>
+        </li>
+        <li>
+          <router-link to="/layout组件">layout组件</router-link>
         </li>
       </ul>
     </nav>
@@ -32,13 +41,13 @@ export default {
 //局部样式
 .box {
   text-align: center;
-  ul {
+  .box-ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding:0; 
   }
-  ul > li {
+  .box-ul > li {
     list-style: none;
     background-color: aquamarine;
     border-radius: 0.1rem;

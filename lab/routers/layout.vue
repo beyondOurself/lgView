@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lg-component></lg-component>
+    <lg-layout></lg-layout>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>

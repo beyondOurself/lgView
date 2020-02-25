@@ -1,0 +1,24 @@
+@table-prefix: ~"@{css-prefix}table";
+.@{table-prefix} {
+    & {
+        background-color: white;
+        margin: .1rem;
+        >table{
+            border:@border;
+            margin: 0;
+            width: 100%;
+            th,td{
+                border:@border;
+            }
+            td{
+                padding: .1rem;
+            }
+            th{
+                background-color: #f7f7f7;
+                white-space: nowrap;
+                padding: .1rem;
+            }
+        }
+
+    }
+}
