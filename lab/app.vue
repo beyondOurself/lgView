@@ -24,7 +24,7 @@
           <router-link to="/table">table组件</router-link>
         </li>
         <li>
-          <router-link to="/layout组件">layout组件</router-link>
+          <router-link to="/layout">layout组件</router-link>
         </li>
       </ul>
     </nav>
@@ -40,8 +40,8 @@ export default {
 <style lang='less' >
 //局部样式
 .box {
-  text-align: center;
   .box-ul {
+  text-align: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

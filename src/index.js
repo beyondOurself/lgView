@@ -6,7 +6,7 @@ import Icon from './components/icon';
 import Button from './components/button';
 import Table from './components/table';
 import TagArea from './components/tag-area';
-import Layout from './components/layout';
+import {Layout,Row,Col} from './components/layout';
 const comCssPrefix = 'Lg';
 const components = {
   Component,
@@ -15,7 +15,9 @@ const components = {
   TagArea,
   Button,
   Table,
-  Layout
+  Layout,
+  Row,
+  Col
 }
 const lgView = {
    ...components

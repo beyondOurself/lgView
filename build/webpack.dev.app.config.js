@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const common = require('./webpack.base.config.js');
 
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'development';
 
 module.exports = merge(common, {
     entry: {
@@ -29,7 +29,7 @@ module.exports = merge(common, {
             amd: 'vue'
         }
     },
-    devtool: 'eval-source-map',
+    devtool: '',
     module: {
         rules: [
             { //加载less
@@ -89,7 +89,7 @@ module.exports = merge(common, {
         }),
         //自定义全局环境变量
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('development')
         }),
         //压缩
         new OptimizeCSSAssetsPlugin({}),
@@ -98,5 +98,5 @@ module.exports = merge(common, {
             filename: '[name].min.css'
         })
     ],
-    mode: "production"
+    mode: "development"
 });

@@ -1,10 +1,10 @@
 <template>
-   <div :class="classes" :style="styles"><slot><slot></div>
+   <div :class="classes" :style="styles"><slot></slot></div>
 </template>
 <script>
 const prefixCls = "lg-card";
 export default {
-  name: "card",
+  name: "Card",
   props:{
     styleBox:{
       type:Object, 

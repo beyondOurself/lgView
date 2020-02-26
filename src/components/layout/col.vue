@@ -1,13 +1,15 @@
 <template>
   <div :class="classes" :style="styles">
-    <h3>布局组件</h3>
+    <slot></slot>
   </div>
 </template>
 <script>
-const prefixCls = "lg-layout";
+const prefixCls = "lg-col";
 export default {
-  name: "",
-  props: {},
+  name: "lCol",
+  props: {
+    span:[String,Number]
+  },
   data() {
     return {};
   },
@@ -17,10 +19,15 @@ export default {
     },
     styles() {
        let style = {}
-
+      if(this.span){
+        style.width = `${this.span/24*100}%`;
+      }
        return style
     }
   },
-  methods: {}
+  methods: {},
+  mounted() {
+    console.log( this.$parent )
+  },
 };
 </script>

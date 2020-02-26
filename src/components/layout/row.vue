@@ -1,15 +1,18 @@
 <template>
   <div :class="classes" :style="styles">
-    <h3>布局组件</h3>
+    <slot></slot>
   </div>
 </template>
 <script>
-const prefixCls = "lg-layout";
+import {isInArr,getChildrensByComponetName} from '../../utils/util'
+
+const prefixCls = "lg-row";
 export default {
-  name: "",
+  name: "lRow",
   props: {},
   data() {
-    return {};
+    return {
+    };
   },
   computed: {
     classes() {
@@ -21,6 +24,9 @@ export default {
        return style
     }
   },
-  methods: {}
+  methods: {},
+  mounted() {
+    console.log(getChildrensByComponetName(this,'lCol').length)
+  },
 };
 </script>
