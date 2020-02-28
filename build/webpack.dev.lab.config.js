@@ -80,11 +80,11 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             title: '',
             template: path.resolve(__dirname, '../lab/lab.html'),
-            inject: 'body' //标签插入到head
+            inject: 'body' //head,body
         }),
         //自定义全局环境变量
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('development')
         }),
         //压缩
         new OptimizeCSSAssetsPlugin({}),

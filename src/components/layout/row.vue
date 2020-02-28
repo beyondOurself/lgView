@@ -9,7 +9,12 @@ import {isInArr,getChildrensByComponetName} from '../../utils/util'
 const prefixCls = "lg-row";
 export default {
   name: "lRow",
-  props: {},
+  props: {
+     gutter:{
+      type:Number,
+      default:0
+    }
+  },
   data() {
     return {
     };
@@ -20,13 +25,14 @@ export default {
     },
     styles() {
        let style = {}
+       
+       this.gutter !== 0 && (style.marginLeft = `${this.gutter/-2}rem`)
 
        return style
     }
   },
   methods: {},
   mounted() {
-    console.log(getChildrensByComponetName(this,'lCol').length)
   },
 };
 </script>

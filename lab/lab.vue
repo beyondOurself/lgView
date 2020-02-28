@@ -3,54 +3,55 @@
   <div class="box">
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view class="rv-block"></router-view>
-    <nav>
-      <ul>
-        <li>
-          <router-link to="/component1">组件1</router-link>
-        </li>
-        <li>
-          <router-link to="/component2">组件2</router-link>
+    <nav >
+      <ul class="box-ul" >
+        <li v-for="(item,index) in items" :key='index'>
+          <router-link :to="item">{{item}}</router-link>
         </li>
       </ul>
     </nav>
-    
   </div>
 </template>
 <script>
+import rous from './routers'
+const nameList = []; 
+ for (const key in rous) {
+   if (rous.hasOwnProperty(key)) {
+       nameList.push(`/${key}`);
+   }
+ }
 export default {
   data() {
-    return {};
+    return {
+      items:nameList
+    };
   }
 };
 </script>
-<style lang='less' scoped>
+<style lang='less' >
 //局部样式
-@paddingv :20px;
 .box {
+  .box-ul {
   text-align: center;
-  ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding:0; 
   }
-  ul > li {
+  .box-ul > li {
     list-style: none;
     background-color: aquamarine;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px 10%;
+    border-radius: 0.1rem;
+    margin: 0.2rem;
+    padding: 0.2rem 10%;
     white-space: nowrap;
-   
   }
   a {
     text-decoration: none;
-    
   }
   .rv-block {
     background-color: #eaff56;
-    margin: 20px;
-    padding: 10px;
-
+    padding: 0.5rem 0;
   }
 }
 </style>

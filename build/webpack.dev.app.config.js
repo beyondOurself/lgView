@@ -29,7 +29,7 @@ module.exports = merge(common, {
             amd: 'vue'
         }
     },
-    devtool: '',
+    devtool: 'eval-source-map',
     module: {
         rules: [
             { //加载less

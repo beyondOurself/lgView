@@ -1,5 +1,5 @@
 
-function isArray(arr) {
+ function isArray(arr) {
     return arr instanceof Array;
 }
 function isObjec(obj) {
@@ -22,12 +22,12 @@ function isFunction(fun) {
 }
 
 /** 判断是否包含在数组内 */
-export function isInArr(v, arr) {
+ function isInArr(v, arr) {
     return isArray(arr) && arr.indexOf(v) !== -1;
 }
 
 /** 指定名称找到子组件 */
-export function getChildrensByComponetName(context = {}, componentName = '') {
+ function getChildrensByComponetName(context = {}, componentName = '') {
     if (isObjec(context) && isString(componentName)) {
         const childrens = context.$children,
             resArr = []
@@ -38,4 +38,8 @@ export function getChildrensByComponetName(context = {}, componentName = '') {
             return resArr;
     }
 
+}
+
+export {
+    isArray,isObjec,isString,isNumber,isUndefined,isBoolean,isFunction,isInArr,getChildrensByComponetName
 }

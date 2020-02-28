@@ -5,35 +5,26 @@
     <router-view class="rv-block"></router-view>
     <nav >
       <ul class="box-ul" >
-        <li>
-          <router-link to="/myComponent">测试组件</router-link>
-        </li>
-        <li>
-          <router-link to="/card">card组件</router-link>
-        </li>
-        <li>
-          <router-link to="/icon">icon组件</router-link>
-        </li>
-        <li>
-          <router-link to="/tagArea">tag-area组件</router-link>
-        </li>
-        <li>
-          <router-link to="/button">button组件</router-link>
-        </li>
-        <li>
-          <router-link to="/table">table组件</router-link>
-        </li>
-        <li>
-          <router-link to="/layout">layout组件</router-link>
+        <li v-for="(item,index) in items" :key='index'>
+          <router-link :to="item">{{item}}</router-link>
         </li>
       </ul>
     </nav>
   </div>
 </template>
 <script>
+import rous from './routers'
+const nameList = []; 
+ for (const key in rous) {
+   if (rous.hasOwnProperty(key)) {
+       nameList.push(`/${key}`);
+   }
+ }
 export default {
   data() {
-    return {};
+    return {
+      items:nameList
+    };
   }
 };
 </script>

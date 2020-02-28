@@ -1,0 +1,11 @@
+
+@CONSTANT:{
+  DESIGN_REM_WIDTH : 100 ; //750px设计稿  1rem = 100px;
+}
+
+/** 全局的MIXINS */
+.pr(@v) when (isnumber(@v)){//调用 .pr(v)[res]
+  @calcV : @v/@CONSTANT[DESIGN_REM_WIDTH]; 
+  @res:~"@{calcV}rem"
+}
+

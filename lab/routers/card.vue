@@ -1,7 +1,7 @@
 <template>
   <div>
     <lg-card>普通组</lg-card>
-    <lg-card mar=".5" pad=".5" :styleBox="{backgroundColor:'red'}">测试组</lg-card>
+    <lg-card mar="50" pad="50" :styleBox="{backgroundColor:'red'}">测试组</lg-card>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>
@@ -13,13 +13,13 @@ export default {
       datas: [
         {
           property: "pad",
-          declare: "主体内边框(单位rem)",
+          declare: "主体内边框(单位pr)",
           mold: "String,Number",
           default: "-"
         },
         {
           property: "mar",
-          declare: "主体外边框(单位rem)",
+          declare: "主体外边框(单位pr)",
           mold: "String,Number",
           default: "-"
         },

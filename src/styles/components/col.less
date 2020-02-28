@@ -1,9 +1,11 @@
 @col-prefix: ~"@{css-prefix}col";
+
 .@{col-prefix} {
     & {
         #bundle.BFC();
-        display: inline-block;
+        display   : inline-block;
         box-sizing: border-box;
-        height: 1rem;
+        font-size: @font-size-base;
+        height    : 1rem;
     }
 }

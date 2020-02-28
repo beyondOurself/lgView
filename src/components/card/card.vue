@@ -24,10 +24,10 @@ export default {
     },
     styles(){
       if(this.pad){
-         this.styleBox.padding = `${this.pad}rem`;
+         this.styleBox.padding =this.p2r(this.pad);
       }
       if(this.mar){
-         this.styleBox.margin = `${this.mar}rem`
+         this.styleBox.margin = this.p2r(this.mar);
       }
       return this.styleBox;
     }

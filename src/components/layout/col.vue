@@ -20,14 +20,16 @@ export default {
     styles() {
        let style = {}
       if(this.span){
-        style.width = `${this.span/24*100}%`;
+        style.width = `${+this.span/24*100}%`;
       }
+      
+      
        return style
     }
   },
   methods: {},
   mounted() {
-    console.log( this.$parent )
-  },
+    
+  }
 };
 </script>
