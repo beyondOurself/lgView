@@ -1,7 +1,6 @@
 import './utils/px2rem.js' ;
 import './styles/index.less';
 import globaltMixiner from './mixins/global.js'
-// console.log('globaltMixiner>>'+JSON.stringify(globaltMixiner.methods.test1()) )
 import Component from './components/my-component';
 import Card from './components/card';
 import Icon from './components/icon';
@@ -12,18 +11,6 @@ import {Layout,Row,Col} from './components/layout';
 const comCssPrefix = 'Lg';
 //全局混淆
 Vue.mixin(globaltMixiner);
-
-// Vue.mixin({
-//    methods:{
-//      mTest(){
-//        console.log("666")
-//      }
-//    }
-// })
-
-
-
-
 const components = {
   Component,
   Card,
