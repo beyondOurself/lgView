@@ -43,9 +43,10 @@ export default {
   }
 };
 </script>
-<style scoped>
-  .lg-tag-area-wrap{
-      padding: 1rem 0 ; 
-      background-color: white;
+<style lang="less" scoped>
+  .lg-tag-area{
+       &{
+         background: white;
+       }
   }
 </style>

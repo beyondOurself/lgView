@@ -5,6 +5,7 @@ import table from './table.vue'
 import card from './card.vue'
 import tagArea from './tag-area.vue'
 import layout from './layout.vue'
+import form from './form.vue'
 
 export default {
     icon,
@@ -13,5 +14,6 @@ export default {
     table,
     card,
     tagArea,
-    layout
+    layout,
+    form
 }

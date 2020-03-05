@@ -1,0 +1,37 @@
+@input-group-prefix: ~"@{css-prefix}input-group";
+
+.@{input-group-prefix} {
+    & {
+        position: relative;
+        padding: 0;
+        border          : 0;
+        background-color: #fff;
+        &::after{
+            
+            position: absolute; 
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            height: .pr(1)[@res];
+
+            content: '';
+
+            background-color: @input-group-color;
+        }
+        
+        &::before{
+            position: absolute; 
+            right: 0;
+            top: 0;
+            left: 0;
+
+            height: .pr(1)[@res];
+
+            content: '';
+
+            background-color: @input-group-color;
+        }
+        
+    }
+}

@@ -3,13 +3,12 @@
 
 .@{tag-area-prefix} {
     & {
-        #bundle.BFC();
-        #bundle.bg-inherit();
-
+        background-color: inherit;
+        #libary.base(bfc;); 
     }
 
     &-title {
-        #bundle.bg-inherit();
+        background-color: inherit;
         position   : absolute;
         top        : 0;
         left       : 0;
@@ -18,7 +17,7 @@
     }
 
     &-content {
-        #bundle.bg-inherit();
+        background-color: inherit;
         position: relative;
         border  : @border;
         margin  : @tag-area-margin;
