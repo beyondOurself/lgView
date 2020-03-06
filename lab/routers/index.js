@@ -6,6 +6,7 @@ import card from './card.vue'
 import tagArea from './tag-area.vue'
 import layout from './layout.vue'
 import form from './form.vue'
+import list from './list.vue'
 
 export default {
     icon,
@@ -15,5 +16,6 @@ export default {
     card,
     tagArea,
     layout,
-    form
+    form,
+    list
 }

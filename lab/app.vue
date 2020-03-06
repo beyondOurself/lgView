@@ -2,7 +2,7 @@
 <template>
   <div class="box">
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view class="rv-block"></router-view>
+    <router-view class="router-view-block"></router-view>
     <nav >
       <ul class="box-ul" >
         <li v-for="(item,index) in items" :key='index'>
@@ -42,14 +42,14 @@ export default {
     list-style: none;
     background-color: aquamarine;
     border-radius: 0.1rem;
-    margin: 0.2rem;
-    padding: 0.2rem 10%;
+    margin: 0.1rem;
+    padding: 0.1rem 5%;
     white-space: nowrap;
   }
   a {
     text-decoration: none;
   }
-  .rv-block {
+  .router-view-block {
     background-color: #eaff56;
     padding: 0.5rem 0;
   }

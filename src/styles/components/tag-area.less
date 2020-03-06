@@ -3,24 +3,26 @@
 
 .@{tag-area-prefix} {
     & {
-        background-color: inherit;
+        .bg-inherit();
+        padding-top: .5em;
     }
 
     &-title {
-        background-color: inherit;
-        position   : absolute;
-        top        : 0;
-        left       : 0;
-        margin-top : .pr(-25)[@res];
-        margin-left: .pr(50)[@res];
+        .bg-inherit();
+        line-height:1;
+        position        : absolute;
+        top             : 0;
+        left            : 0;
+        margin-top: -.5em;
+        margin-left: 2em;
+        padding: 0 .1em;
     }
 
     &-content {
-        background-color: inherit;
-        position: relative;
-        border  : @border;
-        margin  : @tag-area-margin;
-        padding : @tag-area-padding;
+        .bg-inherit();
+        position        : relative;
+        border          : @border;
+        padding         : .5em;
     }
 
 }

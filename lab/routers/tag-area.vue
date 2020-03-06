@@ -1,9 +1,10 @@
 <template>
-    <div class="lg-tag-area-wrap">
+    <div class="content" >
         <lg-tag-area mar="0"  label="标题">
             <div>我就是我是颜色不一样的烟火</div>
         </lg-tag-area>
-        <lg-tag-area mar="1" label="mar变为1">
+        <div class="interval-box"></div>
+        <lg-tag-area mar="10" label="mar变为1">
             <div>我就是我是颜色不一样的烟火</div>
             <ul>
                 <li>1</li>
@@ -44,9 +45,13 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.content{
   .lg-tag-area{
-       &{
-         background: white;
-       }
+   background-color: white;
   }
+  .interval-box{
+  height: 50px;
+ }
+}
+
 </style>

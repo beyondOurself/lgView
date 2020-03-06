@@ -32,7 +32,7 @@
                 let style = {};
 
                 if (this.size) {
-                    style['font-size'] = `${this.size}rem`;
+                    style['font-size'] =this.p2r(this.size);
                 }
 
                 if (this.color) {

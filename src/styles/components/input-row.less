@@ -2,7 +2,26 @@
 
 .@{input-row-prefix} {
     & {
-        .bfc();
-        height: .8rem;
+        height : @input-row-input;
+        padding: 0;
+
+    
     }
+
+    &-label{
+        display: inline-block;
+        margin: 0;
+        width: 50%;
+    }
+
+    &-input{
+        border: none !important;
+        border-radius: 0 !important;
+        display: inline-block;
+        width: 50% !important;
+        background-color : green !important;
+    }
+
+   
+
 }

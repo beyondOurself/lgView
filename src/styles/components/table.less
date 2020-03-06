@@ -1,24 +1,28 @@
 @table-prefix: ~"@{css-prefix}table";
+
 .@{table-prefix} {
     & {
-        .bfc();
         background-color: white;
-        margin: .pr(10)[@res];
-        >table{
-            border:@border;
-            margin: 0;
-            width: 100%;
+
+        >table {
+            border    : @border;
+            margin    : 0;
+            width     : 100%;
             text-align: center;
-            th,td{
-                border:@border;
+
+            th,
+            td {
+                border: @border;
             }
-            td{
-                padding: .pr(10)[@res];
+
+            td {
+                padding: .pr(5)[@res];
             }
-            th{
+
+            th {
                 background-color: #f7f7f7;
-                white-space: nowrap;
-                padding: .pr(10)[@res];
+                white-space     : nowrap;
+                padding         : .pr(5)[@res];
             }
         }
 

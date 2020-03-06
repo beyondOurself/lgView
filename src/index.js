@@ -10,6 +10,7 @@ import Table from './components/table';
 import TagArea from './components/tag-area';
 import {Layout,Row,Col} from './components/layout';
 import {InputGroup,InputRow} from './components/form';
+import {List,ListItem} from './components/list';
 const comCssPrefix = 'Lg';
 //全局混淆
 Vue.mixin(globaltMixiner);
@@ -24,7 +25,9 @@ const components = {
   Row,
   Col,
   InputGroup,
-  InputRow
+  InputRow,
+  List,
+  ListItem
 }
 const lgView = {
    ...components

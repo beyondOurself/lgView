@@ -1,8 +1,8 @@
 <template>
   <div>
-    <lg-icon type="md-albums" size="1" color="red"></lg-icon>
-    <lg-icon type="md-albums" size="2" color="green"></lg-icon>
-    <lg-icon type="md-albums" size="3" color="blue"></lg-icon>
+    <lg-icon type="md-albums" size="40" color="red"></lg-icon>
+    <lg-icon type="md-albums" size="50" color="green"></lg-icon>
+    <lg-icon type="md-albums" size="60" color="blue"></lg-icon>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>
@@ -20,7 +20,7 @@ export default {
         },
         {
           property: "size",
-          declare: "图标的大小(单位rem)",
+          declare: "图标的大小(单位pr)",
           mold: "Number, String",
           default: "-"
         },

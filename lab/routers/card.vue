@@ -1,7 +1,7 @@
 <template>
   <div>
     <lg-card>普通组</lg-card>
-    <lg-card mar="50" pad="50" :styleBox="{backgroundColor:'red'}">测试组</lg-card>
+    <lg-card mar="10" pad="20" :styleBox="{backgroundColor:'red'}">测试组</lg-card>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>

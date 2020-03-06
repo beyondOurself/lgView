@@ -20,11 +20,11 @@
 @font-family          : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 @title-color            : #17233d;
 @text-color             : #515a6e;
-@font-size-base         : .pr(17)[@res];
+@font-size-base         : 17px;
 @line-height-base       : 1.5;
 @border-radius-base     : .pr(10)[@res];
-@padding-base:.pr(20)[@res];
-@margin-base:.pr(20)[@res];
+@padding-base:.pr(10)[@res];
+@margin-base:.pr(10)[@res];
 
 
 // Border color
@@ -58,8 +58,11 @@
 @card-shadow:0 1px 1px 0 rgba(0,0,0,.3);
 
 //tag-area
-@tag-area-margin:@margin-base; 
-@tag-area-padding:@padding-base;
+@tag-area-content-padding:.5em;
+
 
 //input-group
 @input-group-color:@border-color-base;
+
+//input-row
+@input-row-input: .pr(40)[@res];

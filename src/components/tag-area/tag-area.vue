@@ -2,7 +2,7 @@
   <div :class="classes" :style="styles">
     <div :class="contentClasses">
       <span :class="titleClasses" v-text="label"></span>
-      <slot>无内容</slot>
+      <slot>--</slot>
     </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
     styles() {
       let style = this.styleBox;
       if (this.mar) {
-        style.margin = `${this.mar}rem`;
+        style.margin = this.p2r(this.mar);
       }
       return style;
     }

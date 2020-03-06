@@ -1,13 +1,12 @@
 <template>
   <div :class="classes" :style="styles">
-     <label :class="labelClasses"></label>
-     <input :class="inputClasses" type="text" >
+    lg-list-item
   </div>
 </template>
 <script>
-const prefixCls = "lg-input-row";
+const prefixCls = "lg-list-item";
 export default {
-  name: "LInputRow",
+  name: "lListItem",
   props: {},
   data() {
     return {};
@@ -15,12 +14,6 @@ export default {
   computed: {
     classes() {
         return[prefixCls,{} ] 
-    },
-    labelClasses() {
-        return[`${prefixCls}-label`] 
-    },
-    inputClasses() {
-        return[`${prefixCls}-input`] 
     },
     styles() {
        let style = {}
