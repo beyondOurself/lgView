@@ -1,2 +1,3 @@
-import InputGroup from './input-group.vue'
-export {InputGroup}
+import InputGroup from './input-group.vue';
+import InputRow from './input-row.vue';
+export {InputGroup,InputRow}

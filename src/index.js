@@ -1,5 +1,6 @@
 import './utils/px2rem.js' ;
 import './styles/index.less';
+import Vue from 'vue'
 import globaltMixiner from './mixins/global.js'
 import Component from './components/my-component';
 import Card from './components/card';
@@ -8,7 +9,7 @@ import Button from './components/button';
 import Table from './components/table';
 import TagArea from './components/tag-area';
 import {Layout,Row,Col} from './components/layout';
-import {InputGroup} from './components/form';
+import {InputGroup,InputRow} from './components/form';
 const comCssPrefix = 'Lg';
 //全局混淆
 Vue.mixin(globaltMixiner);
@@ -22,7 +23,8 @@ const components = {
   Layout,
   Row,
   Col,
-  InputGroup
+  InputGroup,
+  InputRow
 }
 const lgView = {
    ...components

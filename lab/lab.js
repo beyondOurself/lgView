@@ -4,6 +4,7 @@ import lgView from '../src/index'
 import VueRouter from 'vue-router'
 import routers from './routers'
 
+console.log(Vue)
 
 Vue.use(lgView, {
   capture: true

@@ -1,4 +1,3 @@
-
     ;
     (function(designWidth, rem2px, window, document) {
         var d = document.createElement('div');
@@ -13,7 +12,7 @@
         head.appendChild(d);
         // head.insertBefore(m, head.firstElementChild);
         var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
-        d.remove();
+        // d.remove();
         document.documentElement.style.fontSize = window.innerWidth / designWidth * rem2px / defaultFontSize * 100 + '%';
         var st = document.createElement('style');
         var portrait = "@media screen and (min-width: " + window.innerWidth + "px) {html{font-size:" + ((window.innerWidth /
@@ -23,4 +22,4 @@
         st.innerHTML = portrait + landscape;
         head.appendChild(st);
         return defaultFontSize
-    })(750, 100, window, document);
+    })(375, 100, window, document);

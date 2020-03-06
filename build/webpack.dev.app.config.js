@@ -4,12 +4,7 @@ const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-
 const common = require('./webpack.base.config.js');
-
-process.env.NODE_ENV = 'development';
-
 module.exports = merge(common, {
     entry: {
         lgView: './lab/app.js'
@@ -89,7 +84,8 @@ module.exports = merge(common, {
         }),
         //自定义全局环境变量
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify('development'),
+            'test.env': JSON.stringify('app')
         }),
         //压缩
         new OptimizeCSSAssetsPlugin({}),

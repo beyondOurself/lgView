@@ -1,6 +1,8 @@
 <template>
   <div>
-    <lg-input-group></lg-input-group>
+    <lg-input-group>
+      <lg-input-row></lg-input-row>
+    </lg-input-group>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>

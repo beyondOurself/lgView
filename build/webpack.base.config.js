@@ -1,7 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 function resolve(dir) {
@@ -69,16 +67,6 @@ module.exports = {
         }
     },
     plugins: [
-        //替换 html的插件
-        new HtmlWebpackPlugin({
-            title: '',
-            template: path.resolve(__dirname, '../index.html'),
-            inject: 'head' //标签插入到head
-        }),
-        //清除 /dist 文件夹
-        // new CleanWebpackPlugin({}),
-        // .vue文件处理插件
         new VueLoaderPlugin(),
-
     ]
 }

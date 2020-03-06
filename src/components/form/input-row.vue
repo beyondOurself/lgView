@@ -1,12 +1,12 @@
 <template>
   <div :class="classes" :style="styles">
-     <slot></slot>
+    <h3>input-row</h3>
   </div>
 </template>
 <script>
-const prefixCls = "lg-input-group";
+const prefixCls = "lg-input-row";
 export default {
-  name: "LInputGroup",
+  name: "LInputRow",
   props: {},
   data() {
     return {};

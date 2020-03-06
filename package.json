@@ -4,7 +4,6 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --open  --port 8989 --config build/webpack.dev.dist.config.js",
     "build": "webpack  --config  build/webpack.prod.dist.config.js",
     "lab": "webpack-dev-server  --open  --port 8989 --config  build/webpack.dev.lab.config.js",
     "app": "webpack --watch --config  build/webpack.dev.app.config.js",
