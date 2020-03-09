@@ -1,30 +1,46 @@
 <template>
   <div :class="classes" :style="styles">
     <div :class="labelWrapClasses" :style="labelStyles">
-      <label :class="labelClasses" v-text="label" ></label>
+      <label :class="labelClasses" v-text="label"></label>
     </div>
     <div :class="inputWrapClasses" :style="inputStyles">
-      <input :class="inputClasses" :value="currentValue" @input="handleInput" type="text" :placeholder="placeholder" :readonly="readonly" />
+      <input
+        type="text"
+        :class="inputClasses"
+        :value="currentValue"
+        :placeholder="placeholder"
+        :readonly="currentReadonly"
+        @input="handleInput"
+      />
     </div>
     <i :class="iconClasses" @click="handleClick" v-if="icon"></i>
   </div>
 </template>
 <script>
+import {
+  isInArr,
+  getParentByComponentNames,
+  isFunction
+} from "../../utils/util";
 const prefixCls = "lg-input-row";
 const iconPrefixCls = "lg-icon";
 export default {
-  name: "LInputRow",
+  name: "lInputRow",
   props: {
-    label:{
+    type:{
       type:String,
-      default:"默认"
+      default:"text"
+    },
+    label: {
+      type: String,
+      default: "默认"
+    },
+    placeholder: {
+      type: String,
+      default: "请输入"
     },
     icon: {
       type: String
-    },
-    placeholder:{
-      type:String,
-      default:"请输入"
     },
     labelFlex: {
       type: Number
@@ -32,16 +48,20 @@ export default {
     inputFlex: {
       type: Number
     },
-    readonly:{
-      type:Boolean
+    readonly: {
+      type: Boolean
     },
-    value:{
-      type:String
+    value: {
+      type: String
+    },
+    otherIcon: {
+      type: String
     }
   },
   data() {
     return {
-      currentValue:""
+      currentValue: "",
+      currentReadonly: this.readonly
     };
   },
 
@@ -65,8 +85,12 @@ export default {
       return [
         `${iconPrefixCls}`,
         `${prefixCls}-icon`,
-        {[`${iconPrefixCls}-${this.icon}`]:!!this.icon},
-        {[`${iconPrefixCls}-ios-arrow-forward`]:this.icon === 'select'},
+        {
+          [`${iconPrefixCls}-${this.icon}`]:
+            !!this.icon && !isInArr(this.icon, ["select"]),
+          [`${iconPrefixCls}-ios-arrow-forward`]: this.icon === "select",
+          [`${this.otherIcon}`] : this.icon === ""
+        }
       ];
     },
     styles() {
@@ -76,38 +100,51 @@ export default {
     },
     labelStyles() {
       let style = {};
-      if(this.labelFlex) style['flex'] = this.labelFlex;
+      if (this.labelFlex) style["flex"] = this.labelFlex;
       return style;
     },
     inputStyles() {
       let style = {};
-      if(this.inputFlex) style['flex'] = this.inputFlex;
+      if (this.inputFlex) style["flex"] = this.inputFlex;
       return style;
     }
   },
   watch: {
-    value(val){
-        if(val){
-          this.currentValue = this.value; 
-        }
+    value(val) {
+      if (val) {
+        this.currentValue = this.value;
+      }
     },
-    currentValue(val){
-        if(val){
-            this.value = this.currentValue; 
-        }
+    currentValue(val) {
+      if (val) {
+        this.value = this.currentValue;
+      }
+    },
+    readonly(val) {
+      this.currentReadonly = val;
     }
   },
-  mounted() {
-    console.log(">>>>>"+this.icon)
-  },
+
   methods: {
-    handleInput(){
-       let val = event.target.value;
-       if(val) this.$emit('input',val); 
+    handleInput() {
+      let val = event.target.value;
+      if (val) this.$emit("input", val);
     },
     handleClick() {
       this.$emit("click");
+    },
+    refreshReadonly() {
+      const group = getParentByComponentNames(this, "lInputGroup");
+      let groupReadonly = group.readonly;
+      if (!groupReadonly) return;
+      group.refreshReadonly(groupReadonly);
     }
+  },
+  mounted() {
+    this.refreshReadonly();
+  },
+  beforeDestroy() {
+    this.refreshReadonly();
   }
 };
 </script>

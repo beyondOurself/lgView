@@ -34,5 +34,38 @@
             background-color: @input-group-color;
         }
 
+
     }
+
+    &-shade {
+        position        : absolute;
+        right           : 0;
+        top             : 0;
+        left            : 0;
+        bottom          : 0;
+        height          : 100%;
+        background-color:transparent;
+    }
+
+    &>.lg-input-row {
+
+        &::after {
+            position: absolute;
+            right   : 0;
+            bottom  : 0;
+            left    : 0;
+
+            height: .pr(1)[@res];
+
+            content: '';
+
+            background-color: @input-group-color;
+        }
+
+        &:last-child::after {
+            height: 0;
+        }
+
+    }
+
 }
