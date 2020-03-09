@@ -2,11 +2,11 @@
 
 .@{input-row-prefix} {
     & {
-        height : @input-row-input;
-        padding: 0;
-        display: flex;
+        height     : @input-row-input;
+        padding    : 0;
+        display    : flex;
         align-items: center;
-        position: relative;
+        position   : relative;
     }
 
     &-label {
@@ -14,34 +14,53 @@
     }
 
     &-label-wrap {
-        flex: 1;
-        white-space: nowrap;
+        flex         : 1;
+        white-space  : nowrap;
         text-overflow: ellipsis;
-        overflow: hidden;
-        padding-left:@input-row-label-padding ;
+        overflow     : hidden;
+        padding-left : @input-row-label-padding ;
     }
 
     &-input {
-        height: 100%;
-        width: 100%;
-        border          : 0 !important;
-        border-radius   : 0 !important;
-        padding: 0;
-        outline: none;
-        text-align: right;
+        height       : 100%;
+        width        : 100%;
+        border       : 0 !important;
+        border-radius: 0 !important;
+        padding      : 0;
+        outline      : none;
+        text-align   : right;
 
     }
 
     &-input-wrap {
-        flex: 1;
+        flex   : 1;
         padding: 0 @input-row-input-padding;
     }
 
-    &-icon{
-        font-size: 125%;
-        margin-right:@input-row-icon-margin-right;
+    &-icon {
+        font-size   : 125%;
+        margin-right: @input-row-icon-margin-right;
     }
 
+    &-select {
+        /*很关键：将默认的select选择框样式清除*/
+        appearance        : none;
+        -moz-appearance   : none;
+        -webkit-appearance: none;
+        width             : 100%;
+        border            : none;
+        outline           : none;
+        direction         : rtl;
+        background        : none;
+        box-sizing        : content-box;
+        position          : relative;
+        border-right      : solid @input-row-select-border-right-width transparent;
+        padding-right           : @input-row-select-padding ;
+
+        &>option {
+            direction: ltr;
+        }
+    }
 
 
 }

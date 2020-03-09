@@ -5,15 +5,20 @@
     </div>
     <div :class="inputWrapClasses" :style="inputStyles">
       <input
-        type="text"
+        :type="type"
         :class="inputClasses"
         :value="currentValue"
         :placeholder="placeholder"
         :readonly="currentReadonly"
         @input="handleInput"
+        v-if="type == 'text'"
       />
+      <select :class="selectClasses" ref="selectEle" v-if="type=='select'" @change="handleSelect">
+        <option disabled >请选择</option>
+        <option v-for=" (item,index) in selectList " :key="index" :value="item.value" >{{item.text}}</option>
+      </select>
     </div>
-    <i :class="iconClasses" @click="handleClick" v-if="icon"></i>
+    <i :class="iconClasses" @click="handleClick" ref="iconEle" v-if="icon"></i>
   </div>
 </template>
 <script>
@@ -27,9 +32,9 @@ const iconPrefixCls = "lg-icon";
 export default {
   name: "lInputRow",
   props: {
-    type:{
-      type:String,
-      default:"text"
+    type: {
+      type: String,
+      default: "text"
     },
     label: {
       type: String,
@@ -56,6 +61,9 @@ export default {
     },
     otherIcon: {
       type: String
+    },
+    selectList:{
+      type:Array
     }
   },
   data() {
@@ -89,9 +97,12 @@ export default {
           [`${iconPrefixCls}-${this.icon}`]:
             !!this.icon && !isInArr(this.icon, ["select"]),
           [`${iconPrefixCls}-ios-arrow-forward`]: this.icon === "select",
-          [`${this.otherIcon}`] : this.icon === ""
+          [`${this.otherIcon}`]: this.icon === ""
         }
       ];
+    },
+    selectClasses() {
+      return [`${prefixCls}-select`];
     },
     styles() {
       let style = {};
@@ -138,8 +149,13 @@ export default {
       let groupReadonly = group.readonly;
       if (!groupReadonly) return;
       group.refreshReadonly(groupReadonly);
+    },
+    handleSelect() {
+       let selectVal = event.target.value; 
+       this.$emit('input',selectVal)
     }
   },
+  
   mounted() {
     this.refreshReadonly();
   },

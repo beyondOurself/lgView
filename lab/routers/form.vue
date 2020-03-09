@@ -1,8 +1,8 @@
 <template>
   <div>
     <lg-input-group>
-      <lg-input-row icon="select" v-model="value" @click="handleClick()"></lg-input-row>
-      <lg-input-row icon="select" readonly></lg-input-row>
+      <lg-input-row  :selectList="selectArr" type="select" icon="select" v-model="value" @click="handleClick()"></lg-input-row>
+      <lg-input-row icon="select" @click="handleClick"></lg-input-row>
       <lg-input-row
         icon="select"
         :label-flex="2"
@@ -11,6 +11,14 @@
         readonly
       ></lg-input-row>
     </lg-input-group>
+    <label for="selectEle">666</label>
+
+    <select id="selectEle">
+      <option disabled value>请选择</option>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>
@@ -20,6 +28,16 @@ export default {
   data() {
     return {
       value: "",
+      selectArr: [
+        {
+          value: "aaaa",
+          text: "aaaa"
+        },
+        {
+          value: "bbbb",
+          text: "bbbb"
+        }
+      ],
       datas: [
         {
           property: "label(row)",
