@@ -1,0 +1,43 @@
+@radio-prefix       :~"@{css-prefix}radio";
+@radio-prefix-inner :~"@{radio-prefix}-inner";
+
+.@{radio-prefix} {
+    &-wrap {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    &-inner {
+        border-radius   : 50%;
+        display         : inline-block;
+        background-clip : content-box;
+        height          : @radio-inner-height;
+        width           : @radio-inner-width;
+        padding         : @radio-inner-padding;
+        background-color: @white;
+        border          : @radio-border;
+        transition      : @radio-transition;
+        &-disabled{
+           background-color: @radio-inner-disabled-background-color;
+        }
+    }
+
+
+
+    &-input {
+        height : 0;
+        width  : 0;
+        padding: 0;
+        border : 0;
+
+        &:checked+.@{radio-prefix-inner} {
+            border-color: @radio-inner-checked-border-color ;
+            background-color: @radio-inner-checked-background-color;
+        }
+    }
+
+    &-label{
+       padding: @radio-label-padding;
+    }
+}

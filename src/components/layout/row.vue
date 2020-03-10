@@ -51,6 +51,9 @@ export default {
       type: String,
       default: "start",
       validator: i => isInArr(i, ["start", "end", "center", "baseline"])
+    },
+    center: {
+      type: Boolean
     }
   },
   data() {
@@ -139,6 +142,10 @@ export default {
         style["align-items"] = iteStr;
       }
 
+      if (this.center) {
+        style["align-items"] = "center";
+        style["justify-content"] = "center";
+      }
       return style;
     }
   },

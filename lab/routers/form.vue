@@ -1,7 +1,13 @@
 <template>
   <div>
     <lg-input-group>
-      <lg-input-row  :selectList="selectArr" type="select" icon="select" v-model="value" @click="handleClick()"></lg-input-row>
+      <lg-input-row
+        :selectList="selectArr"
+        type="select"
+        icon="select"
+        v-model="value"
+        @click="handleClick()"
+      ></lg-input-row>
       <lg-input-row icon="select" @click="handleClick"></lg-input-row>
       <lg-input-row
         icon="select"
@@ -11,14 +17,85 @@
         readonly
       ></lg-input-row>
     </lg-input-group>
-    <label for="selectEle">666</label>
-
-    <select id="selectEle">
-      <option disabled value>请选择</option>
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-    </select>
+    <hr />
+    <lg-row>
+      <lg-col span="12">
+        <lg-row center>
+          <lg-radio v-model="selectRes" label="apple">
+            <lg-icon type="logo-octocat"></lg-icon>
+            <span>{{selectRes}}</span>
+          </lg-radio>
+        </lg-row>
+      </lg-col>
+      <lg-col span="12">
+        <lg-row center>
+          <lg-radio disabled>disabled</lg-radio>
+        </lg-row>
+      </lg-col>
+    </lg-row>
+    <hr />
+    <lg-radio-group>
+      <lg-row>
+        <lg-col :flex="1">
+          <lg-row center>
+            <lg-radio v-model="apple" name="phone" label="apple">
+              <lg-icon type="logo-octocat"></lg-icon>
+              <span>{{apple}}</span>
+            </lg-radio>
+          </lg-row>
+        </lg-col>
+        <lg-col :flex="1">
+          <lg-row center>
+            <lg-radio v-model="android" name="phone" label="android">
+              <lg-icon type="logo-octocat"></lg-icon>
+              <span>{{android}}</span>
+            </lg-radio>
+          </lg-row>
+        </lg-col>
+      </lg-row>
+    </lg-radio-group>
+    <hr />
+    <lg-radio-group>
+      <lg-row>
+        <lg-col :flex="1">
+          <lg-row center>
+            <lg-radio v-model="apple" name="phone" label="apple">
+              <lg-icon type="logo-octocat"></lg-icon>
+              <span>{{apple}}</span>
+            </lg-radio>
+          </lg-row>
+        </lg-col>
+        <lg-col :flex="1">
+          <lg-row center>
+            <lg-radio v-model="android" name="phone" label="android">
+              <lg-icon type="logo-octocat"></lg-icon>
+              <span>{{android}}</span>
+            </lg-radio>
+          </lg-row>
+        </lg-col>
+      </lg-row>
+    </lg-radio-group>
+    <hr />
+    <lg-radio-group>
+      <lg-row>
+        <lg-col :flex="1">
+          <lg-row center>
+            <lg-radio v-model="apple" name="phone" label="apple">
+              <lg-icon type="logo-octocat"></lg-icon>
+              <span>{{apple}}</span>
+            </lg-radio>
+          </lg-row>
+        </lg-col>
+        <lg-col :flex="1">
+          <lg-row center>
+            <lg-radio v-model="android" name="phone" label="android">
+              <lg-icon type="logo-octocat"></lg-icon>
+              <span>{{android}}</span>
+            </lg-radio>
+          </lg-row>
+        </lg-col>
+      </lg-row>
+    </lg-radio-group>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>
@@ -27,6 +104,10 @@
 export default {
   data() {
     return {
+      selectRes: true,
+      selectRes2: "",
+      apple:"苹果",
+      android:"安卓",
       value: "",
       selectArr: [
         {

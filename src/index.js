@@ -9,7 +9,7 @@ import Button from './components/button';
 import Table from './components/table';
 import TagArea from './components/tag-area';
 import {Layout,Row,Col} from './components/layout';
-import {InputGroup,InputRow} from './components/form';
+import {InputGroup,InputRow,Radio,RadioGroup} from './components/form';
 import {List,ListItem} from './components/list';
 const comCssPrefix = 'Lg';
 //全局混淆
@@ -27,7 +27,9 @@ const components = {
   InputGroup,
   InputRow,
   List,
-  ListItem
+  ListItem,
+  Radio,
+  RadioGroup
 }
 const lgView = {
    ...components

@@ -27,11 +27,11 @@ function isInArr(v, arr) {
 }
 
 /** 判断是否为0 */
-function isZero(v){
+function isZero(v) {
     return (isNumber(v) || isString(v)) && +v === 0
- }
+}
 
-/** 指定名称找到子组件 */
+/** 找到指定名称子组件 */
 function getChildrensByComponetName(context = {}, componentName = '') {
     if (isObject(context) && isString(componentName)) {
         const childrens = context.$children,
@@ -44,6 +44,14 @@ function getChildrensByComponetName(context = {}, componentName = '') {
     }
     return null;
 
+}
+/** 找到指定名称的子孙组件 */
+function findComponentsDownward(context, componentName) {
+    return context.$children.reduce((components, child) => {
+        if (child.$options.name === componentName) components.push(child);
+        const foundChilds = findComponentsDownward(child, componentName);
+        return components.concat(foundChilds);
+    }, []);
 }
 
 /** 找到父组件 */
@@ -71,21 +79,21 @@ function getParentByComponentNames(context = {}, componentName = "", componentNa
 /** 设置组件的属性  */
 function setComponentPropertis(component, propertis) {
     let components = [];
- 
+
     if (!isArray(component)) {
-       components = [component];
+        components = [component];
     } else {
-       components = component;
+        components = component;
     }
     if (isObject(propertis) && components.length > 0) {
-         for (let obj of components) {
-             for (let [key,value] of Object.entries(propertis)) {
-                 obj[key]=value
-             }
-         }
+        for (let obj of components) {
+            for (let [key, value] of Object.entries(propertis)) {
+                obj[key] = value
+            }
+        }
     }
     return null;
- }
+}
 
 export {
     isArray,
@@ -99,5 +107,6 @@ export {
     isZero,
     getChildrensByComponetName,
     getParentByComponentNames,
-    setComponentPropertis
+    setComponentPropertis,
+    findComponentsDownward
 }
