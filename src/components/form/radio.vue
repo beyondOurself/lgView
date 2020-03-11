@@ -10,7 +10,7 @@
         :name="getGroupId"
         @change="handleChange"
       />
-      <span :class="innerClasses"></span>
+      <span :class="innerClasses" :style="innerStyles" ></span>
     </span>
     <span :class="labelClasses">
       <slot>{{ label }}</slot>
@@ -34,13 +34,16 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: Number
     }
   },
   data() {
     return {
       parent: {},
       checkedValue: this.value,
-      isGroup: !!parent,
+      isGroup: !!parent
     };
   },
   watch: {
@@ -75,8 +78,17 @@ export default {
 
       return style;
     },
+    innerStyles() {
+      let style = {};
+      if(this.size && !this.isGroup){
+        style["padding"] = this.p2r(this.size);
+      }
+      
+      return style;
+    },
+
     getGroupId() {
-       return this.parent ?`${this.parent._uid}_radio_name`  : ""; 
+      return this.parent ? `${this.parent._uid}_radio_name` : "";
     }
   },
   methods: {
@@ -90,6 +102,11 @@ export default {
         // 组合使用
         result = optionValue;
         //设置group 的value
+        if (this.parent) {
+          this.parent.currentValue = result;
+        } else {
+          console.warn("There is no parent");
+        }
       } else {
         // 单独使用
         result = optionChecked;
@@ -97,10 +114,9 @@ export default {
 
       this.$emit("input", result);
     },
-    getParent(){
+    getParent() {
       this.parent = getParentByComponentNames(this, "lRadioGroup");
     }
-    
   },
   mounted() {
     this.getParent();

@@ -9,17 +9,23 @@ const prefixCls = "lg-radio-group";
 export default {
   name: "lRadioGroup",
   props: {
-    value: [String, Number]
+    value: [String, Number],
+    size:{
+      type:Number
+    }
   },
   data() {
     return {
-      currentValue: "",
-      childrens:[]
+      currentValue: this.value,
+      childrens: []
     };
   },
-  watch:{
-    value(){
+  watch: {
+    value() {
       this.currentValue = this.value;
+    },
+    currentValue(val){
+       this.$emit("input",val);
     }
   },
   computed: {
@@ -33,16 +39,21 @@ export default {
     }
   },
   methods: {
-    getChildrens(){
+    getChildrens() {
       this.childrens = findComponentsDownward(this, "lRadio");
-      //根据value 设置子组件的checked
-    }, 
+    },
     setChecked() {
-     
-     
+      let radios = this.childrens;
+      if (radios && radios.length > 0) {
+        radios.forEach((radio, index) => {
+            if(this.currentValue === radio.label){
+               radio.checkedValue = true;
+            }
+        });
+      }
     }
   },
-  mounted(){
+  mounted() {
     this.getChildrens();
     this.setChecked();
   }

@@ -33,54 +33,13 @@
         </lg-row>
       </lg-col>
     </lg-row>
+
     <hr />
-    <lg-radio-group>
+    <lg-radio-group v-model="groupValue">
       <lg-row>
         <lg-col :flex="1">
           <lg-row center>
-            <lg-radio v-model="apple" name="phone" label="apple">
-              <lg-icon type="logo-octocat"></lg-icon>
-              <span>{{apple}}</span>
-            </lg-radio>
-          </lg-row>
-        </lg-col>
-        <lg-col :flex="1">
-          <lg-row center>
-            <lg-radio v-model="android" name="phone" label="android">
-              <lg-icon type="logo-octocat"></lg-icon>
-              <span>{{android}}</span>
-            </lg-radio>
-          </lg-row>
-        </lg-col>
-      </lg-row>
-    </lg-radio-group>
-    <hr />
-    <lg-radio-group>
-      <lg-row>
-        <lg-col :flex="1">
-          <lg-row center>
-            <lg-radio v-model="apple" name="phone" label="apple">
-              <lg-icon type="logo-octocat"></lg-icon>
-              <span>{{apple}}</span>
-            </lg-radio>
-          </lg-row>
-        </lg-col>
-        <lg-col :flex="1">
-          <lg-row center>
-            <lg-radio v-model="android" name="phone" label="android">
-              <lg-icon type="logo-octocat"></lg-icon>
-              <span>{{android}}</span>
-            </lg-radio>
-          </lg-row>
-        </lg-col>
-      </lg-row>
-    </lg-radio-group>
-    <hr />
-    <lg-radio-group>
-      <lg-row>
-        <lg-col :flex="1">
-          <lg-row center>
-            <lg-radio v-model="apple" name="phone" label="apple">
+            <lg-radio v-model="apple" name="phone" label="apple"  :size="1">
               <lg-icon type="logo-octocat"></lg-icon>
               <span>{{apple}}</span>
             </lg-radio>
@@ -98,6 +57,9 @@
     </lg-radio-group>
     <hr />
     <lg-table :data="datas"></lg-table>
+    <hr />
+    <lg-table :data="radioDatas"></lg-table>
+    <hr />
   </div>
 </template>
 <script>
@@ -106,8 +68,9 @@ export default {
     return {
       selectRes: true,
       selectRes2: "",
-      apple:"苹果",
-      android:"安卓",
+      apple: "苹果",
+      android: "安卓",
+      groupValue: "android",
       value: "",
       selectArr: [
         {
@@ -180,11 +143,45 @@ export default {
           mold: "Boolean",
           default: "false"
         }
+      ],
+      radioDatas: [
+        {
+          property: "value(radio)",
+          declare: "单独使用时,radio绑定触发的结果(true | false)",
+          mold: "Boolean",
+          default: "false"
+        },
+        {
+          property: "label(radio)",
+          declare: "绑定的值,内容为空将显示label",
+          mold: "String",
+          default: "--"
+        },
+        {
+          property: "disabled(radio)",
+          declare: "radiod的原生属性,是否可用",
+          mold: "Boolean",
+          default: "false"
+        },
+        {
+          property: "size(radio)",
+          declare: "radiod的大小,单位是pr",
+          mold: "Number",
+          default: "5"
+        },
+        {
+          property: "value(radio-group)",
+          declare: "radio 组选择的值",
+          mold: "String,number",
+          default: ""
+        }
       ]
     };
   },
-  mounted() {
-    console.log(this.value);
+  watch: {
+    groupValue(val) {
+      console.log("groupValue>>>" + val);
+    }
   },
   methods: {
     handleClick() {

@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const common = require('./webpack.base.config.js');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 
@@ -80,12 +79,6 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
-         //替换 html的插件
-         new HtmlWebpackPlugin({
-            title: '',
-            template: path.resolve(__dirname, '../index.html'),
-            inject: 'body' 
-        }),
         //自定义全局环境变量
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
