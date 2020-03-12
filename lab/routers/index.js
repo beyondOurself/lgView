@@ -7,6 +7,8 @@ import tagArea from './tag-area.vue'
 import layout from './layout.vue'
 import form from './form.vue'
 import list from './list.vue'
+import radio from './radio.vue'
+import checkbox from './checkbox.vue'
 
 export default {
     icon,
@@ -17,5 +19,7 @@ export default {
     tagArea,
     layout,
     form,
-    list
+    list,
+    radio,
+    checkbox
 }

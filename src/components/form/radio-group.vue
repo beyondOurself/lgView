@@ -4,14 +4,17 @@
   </div>
 </template>
 <script>
-import { findComponentsDownward } from "../../utils/util";
+import {
+  findComponentsDownward,
+  setComponentPropertis
+} from "../../utils/util";
 const prefixCls = "lg-radio-group";
 export default {
   name: "lRadioGroup",
   props: {
     value: [String, Number],
-    size:{
-      type:Number
+    size: {
+      type: Number
     }
   },
   data() {
@@ -21,11 +24,14 @@ export default {
     };
   },
   watch: {
-    value() {
-      this.currentValue = this.value;
+    value(val) {
+      this.currentValue = val;
     },
-    currentValue(val){
-       this.$emit("input",val);
+    currentValue(val) {
+      this.$emit("input", val);
+    },
+    size(val) {
+      this.refreshSize(val);
     }
   },
   computed: {
@@ -40,18 +46,24 @@ export default {
   },
   methods: {
     getChildrens() {
-      this.childrens = findComponentsDownward(this, "lRadio");
+       return this.childrens = findComponentsDownward(this, "lRadio");
     },
     setChecked() {
-      let radios = this.childrens;
-      if (radios && radios.length > 0) {
+      let radios = this.getChildrens();
+      if (radios) {
         radios.forEach((radio, index) => {
-            if(this.currentValue === radio.label){
-               radio.checkedValue = true;
-            }
+          if (this.currentValue === radio.label) {
+            radio.checkedValue = true;
+          }
         });
       }
-    }
+    },
+    refreshSize(val) {
+      let radios = this.getChildrens();
+      if (radios) {
+        setComponentPropertis(radios, { currentSize: val });
+      }
+    },
   },
   mounted() {
     this.getChildrens();

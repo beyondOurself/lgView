@@ -30,6 +30,10 @@ export default {
     flex: {
       type: Number,
       default: 0
+    },
+    center:{
+      type:Boolean,
+      default:false
     }
   },
   data() {
@@ -41,7 +45,7 @@ export default {
   },
   computed: {
     classes() {
-      return [prefixCls, {}];
+      return [prefixCls, {[`${prefixCls}-center`]:this.center }];
     },
     styles() {
       let style = {};

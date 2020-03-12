@@ -1,9 +1,9 @@
 <template>
   <div :class="classes" :style="styles">
-    <div :class="labelWrapClasses" :style="labelStyles">
+    <div :class="labelWrapClasses" :style="labelStyles" v-if="isShow">
       <label :class="labelClasses" v-text="label"></label>
     </div>
-    <div :class="inputWrapClasses" :style="inputStyles">
+    <div :class="inputWrapClasses" :style="inputStyles" v-if="isShow">
       <input
         :type="type"
         :class="inputClasses"
@@ -14,11 +14,12 @@
         v-if="type == 'text'"
       />
       <select :class="selectClasses" ref="selectEle" v-if="type=='select'" @change="handleSelect">
-        <option disabled >请选择</option>
-        <option v-for=" (item,index) in selectList " :key="index" :value="item.value" >{{item.text}}</option>
+        <option disabled>请选择</option>
+        <option v-for=" (item,index) in selectList " :key="index" :value="item.value">{{item.text}}</option>
       </select>
     </div>
-    <i :class="iconClasses" @click="handleClick" ref="iconEle" v-if="icon"></i>
+    <i :class="iconClasses" @click="handleClick" ref="iconEle" v-if="icon && isShow"></i>
+    <slot></slot>
   </div>
 </template>
 <script>
@@ -62,14 +63,15 @@ export default {
     otherIcon: {
       type: String
     },
-    selectList:{
-      type:Array
+    selectList: {
+      type: Array
     }
   },
   data() {
     return {
       currentValue: "",
-      currentReadonly: this.readonly
+      currentReadonly: this.readonly,
+      isShow: true
     };
   },
 
@@ -151,11 +153,16 @@ export default {
       group.refreshReadonly(groupReadonly);
     },
     handleSelect() {
-       let selectVal = event.target.value; 
-       this.$emit('input',selectVal)
+      let selectVal = event.target.value;
+      this.$emit("input", selectVal);
+    },
+    setIsShow() {
+      if (this.$slots.default) {
+        this.isShow = false;
+      }
     }
   },
-  
+
   mounted() {
     this.refreshReadonly();
   },

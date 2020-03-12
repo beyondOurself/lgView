@@ -29,11 +29,14 @@
 
 
 // Border color
-@border-color-base      : #c8c7cc;  
+@border-color-base      : #dcdee2 ; 
 @border-width-base      : 1px;      
 @border-style-base      : solid;    
 @border:@border-style-base @border-width-base @border-color-base ;
-
+@border-radius-small: .pr(2)[@res];
+@border-radius-normal: .pr(4)[@res];
+@border-radius-large: .pr(8)[@res];
+@border-radius-circle: 50%;
 // Background color
 @background-color-base        : #efeff4;  // base
 
@@ -75,11 +78,21 @@
 //radio
 @radio-inner-width:.pr(15)[@res];
 @radio-inner-height:.pr(15)[@res];
-@radio-inner-padding:.pr(5)[@res];
+@radio-inner-padding:.pr(4)[@res]; //radio 的大小
 @radio-inner-checked-border-color:@primary-color;
 @radio-inner-checked-background-color:@primary-color;
 @radio-inner-disabled-background-color:@disabled-color;
 @radio-label-padding:.pr(5)[@res];
-@radio-border: 1px solid #dcdee2;
+@radio-border: @border;
 @radio-transition: all @transition-time @ease-in-out; ;
-
+//checkbox
+@checkbox-standin-width:.pr(20)[@res];
+@checkbox-standin-height:.pr(20)[@res];
+@checkbox-standin-before-border:solid .pr(4)[@res] @primary-color ;
+@checkbox-standin-before-height:.pr(12)[@res];
+@checkbox-standin-before-width:.pr(4)[@res];
+@checkbox-standin-before-radius:@border-radius-normal;
+@checkbox-standin-transition:all @transition-time @ease-in-out;
+@checkbox-standin-disabled-color:@disabled-color;
+@checkbox-standin-border-radius:@border-radius-normal;
+@checkbox-label-padding:.pr(5)[@res];
