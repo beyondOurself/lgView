@@ -20,6 +20,9 @@ function isBoolean(boo) {
 function isFunction(fun) {
     return typeof fun === 'function'
 }
+function isNullOrEmpty(val){
+    return null === val || "" === val;
+}
 
 /** 判断是否包含在数组内 */
 function isInArr(v, arr) {
@@ -105,6 +108,7 @@ export {
     isFunction,
     isInArr,
     isZero,
+    isNullOrEmpty,
     getChildrensByComponetName,
     getParentByComponentNames,
     setComponentPropertis,

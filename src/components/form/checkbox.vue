@@ -6,18 +6,22 @@
         :value="label"
         :class="inputClasses"
         :disabled="disabled"
-        :checked="currentChecked"
+        :checked="currentChecked | checkedFilter"
         @change="handleChange"
       />
-      <div :class="standinClasses" :style="standinStyles"></div>
+      <div :class="standinClasses" ref="standinEl"></div>
     </span>
-    <span :class="labelClasses" v-if="label">
+    <span :class="labelClasses" >
       <slot>{{label}}</slot>
     </span>
   </label>
 </template>
 <script>
-import { isBoolean, getParentByComponentNames } from "../../utils/util";
+import {
+  isInArr,
+  isBoolean,
+  getParentByComponentNames
+} from "../../utils/util";
 import checkboxVue from "../../../lab/routers/checkbox.vue";
 const prefixCls = "lg-checkbox";
 const prefixIconCls = "lg-icon";
@@ -25,7 +29,8 @@ export default {
   name: "lCheckbox",
   props: {
     value: {
-      type: [String, Number, Boolean]
+      type: Boolean,
+      default:false
     },
     label: {
       type: String
@@ -33,14 +38,22 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: "normal",
+      validator: val => {
+        return isInArr(val, ["small", "normal", "large"]);
+      }
     }
   },
   data() {
     return {
       isExistGroup: false,
-      group: null,
+      parent: null,
       currentChecked: this.value,
-      currentValue: this.value
+      currentValue: this.value,
+      currentSize: this.size
     };
   },
   watch: {
@@ -51,11 +64,16 @@ export default {
           this.currentChecked = val;
         }
       }
+    },
+    size(val) {
+      this.currentSize = val;
+    },
+    currentSize(){
     }
   },
   filters: {
     checkedFilter(val) {
-      return !isExistGroup && isBoolean(val) ? val : false;
+      return isBoolean(val) ? val : false;
     }
   },
   computed: {
@@ -71,37 +89,52 @@ export default {
     standinClasses() {
       return [
         `${prefixCls}-standin`,
-        { [`${prefixCls}-standin-disabled`]: this.disabled }
+        {
+          [`${prefixCls}-standin-disabled`]: this.disabled,
+          [`${prefixCls}-standin-small`]: this.currentSize === "small",
+          [`${prefixCls}-standin-large`]: this.currentSize === "large"
+        }
       ];
     },
     labelClasses() {
       return [`${prefixCls}-label`];
-    },
-    standinStyles() {}
+    }
   },
   methods: {
     setGroup() {
       let group = getParentByComponentNames(this, "lCheckboxGroup");
       this.isExistGroup = !!group;
-      if (group) this.group = group;
+      if (group) this.parent = group;
     },
     handleChange() {
       let target = event.target,
-        checkedVal = target.checked,
+        checkedVal = (this.currentChecked = target.checked),
         checkboxVal = target.value,
         resultVal = "";
       if (this.isExistGroup) {
         resultVal = checkboxVal;
+        this.refreshGroupValue();
       } else {
         resultVal = checkedVal;
       }
-
       this.$emit("input", resultVal);
+    },
+    refreshGroupValue() {
+      let parent = this.parent;
+      if (parent) {
+        parent.refreshValue();
+      }
+    },
+    refreshGroupSize() {
+      let parent = this.parent;
+      if (parent) {
+        parent.refreshSize(parent.size);
+      }
     }
   },
   mounted() {
     this.setGroup();
-  },
-  beforeDestroy() {}
+    this.refreshGroupSize();
+  }
 };
 </script>

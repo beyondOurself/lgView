@@ -1,5 +1,7 @@
 @radio-prefix       :~"@{css-prefix}radio";
 @radio-prefix-inner :~"@{radio-prefix}-inner";
+@radio-prefix-inner-small :~"@{radio-prefix-inner}-small";
+@radio-prefix-inner-large :~"@{radio-prefix-inner}-large";
 
 .@{radio-prefix} {
     &-wrap {
@@ -23,8 +25,6 @@
         }
     }
 
-
-
     &-input {
         height : 0;
         width  : 0;
@@ -39,5 +39,11 @@
 
     &-label{
        padding: @radio-label-padding;
+    }
+    .@{radio-prefix-inner-small} {
+        
+    }
+    .@{radio-prefix-inner-large} {
+
     }
 }

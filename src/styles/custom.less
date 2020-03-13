@@ -10,6 +10,7 @@
 @danger-color : #dd524d;
 @royal-color  : #8a6de9;
 @disabled-color: #cccccc;
+@disabled-cover-color: #f3f3f3;
 
 @white: #fff;
 @black: #000;
@@ -76,9 +77,10 @@
 @input-row-select-border-right-width:.pr(40)[@res];
 @input-row-select-padding:.pr(15)[@res];
 //radio
-@radio-inner-width:.pr(15)[@res];
-@radio-inner-height:.pr(15)[@res];
-@radio-inner-padding:.pr(4)[@res]; //radio 的大小
+@radio-size-base: 24;
+@radio-inner-width:.pr(@radio-size-base)[@res];
+@radio-inner-height:.pr(@radio-size-base)[@res];
+@radio-inner-padding:.pr(5)[@res]; //radio 的大小
 @radio-inner-checked-border-color:@primary-color;
 @radio-inner-checked-background-color:@primary-color;
 @radio-inner-disabled-background-color:@disabled-color;
@@ -86,13 +88,40 @@
 @radio-border: @border;
 @radio-transition: all @transition-time @ease-in-out; ;
 //checkbox
-@checkbox-standin-width:.pr(20)[@res];
-@checkbox-standin-height:.pr(20)[@res];
-@checkbox-standin-before-border:solid .pr(4)[@res] @primary-color ;
-@checkbox-standin-before-height:.pr(12)[@res];
-@checkbox-standin-before-width:.pr(4)[@res];
-@checkbox-standin-before-radius:@border-radius-normal;
-@checkbox-standin-transition:all @transition-time @ease-in-out;
-@checkbox-standin-disabled-color:@disabled-color;
-@checkbox-standin-border-radius:@border-radius-normal;
+@checkbox-standin-size: 24 ; // 整体基础宽
+
+@checkbox-standin-size-small-rate: 0.8 ;  // small 尺寸 : 基于基础尺寸缩小 
+@checkbox-standin-size-large-rate: 1.2 ;  // large 尺寸 : 基于基础尺寸放大
+
+@checkbox-standin-before-size: 12 ; //内部钩子的基础框
+@checkbox-standin-size-before-rate: 0.3 ; //钩子的宽高比 1 : 3
+
 @checkbox-label-padding:.pr(5)[@res];
+@checkbox-standin-before-radius:@border-radius-normal;
+@checkbox-standin-disabled-color:@disabled-cover-color;
+@checkbox-standin-before-disabled-color:@disabled-color;
+@checkbox-standin-border-radius:@border-radius-normal;
+@checkbox-standin-before-border:solid .pr(4)[@res] @primary-color ;
+@checkbox-standin-transition:all @transition-time @ease-in-out;
+
+
+
+@checkbox-standin-width:.pr(@checkbox-standin-size)[@res];
+@checkbox-standin-height:.pr(@checkbox-standin-size)[@res];
+
+@checkbox-standin-width-small:.pr(@checkbox-standin-size * @checkbox-standin-size-small-rate)[@res];
+@checkbox-standin-height-small:.pr(@checkbox-standin-size * @checkbox-standin-size-small-rate)[@res];
+
+@checkbox-standin-width-large:.pr(@checkbox-standin-size * @checkbox-standin-size-large-rate)[@res];
+@checkbox-standin-height-large:.pr(@checkbox-standin-size * @checkbox-standin-size-large-rate)[@res];
+
+
+@checkbox-standin-before-height:.pr(@checkbox-standin-before-size)[@res];
+@checkbox-standin-before-width:.pr(@checkbox-standin-before-size*@checkbox-standin-size-before-rate)[@res];
+
+@checkbox-standin-before-small-height:.pr(@checkbox-standin-before-size * @checkbox-standin-size-small-rate )[@res];
+@checkbox-standin-before-small-width:.pr(@checkbox-standin-before-size*@checkbox-standin-size-before-rate*@checkbox-standin-size-small-rate)[@res];
+
+@checkbox-standin-before-large-height:.pr(@checkbox-standin-before-size * @checkbox-standin-size-large-rate)[@res];
+@checkbox-standin-before-large-width:.pr(@checkbox-standin-before-size*@checkbox-standin-size-before-rate*@checkbox-standin-size-large-rate)[@res];
+

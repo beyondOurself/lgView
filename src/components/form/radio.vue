@@ -1,6 +1,6 @@
 <template>
   <label :class="wrapClasses" :style="wrapStyles">
-    <span >
+    <span>
       <input
         type="radio"
         :class="inputClasses"
@@ -18,7 +18,7 @@
   </label>
 </template>
 <script>
-import { isBoolean, getParentByComponentNames } from "../../utils/util";
+import { isInArr,isBoolean, getParentByComponentNames } from "../../utils/util";
 const prefixCls = "lg-radio";
 export default {
   name: "lRadio",
@@ -36,7 +36,11 @@ export default {
       default: false
     },
     size: {
-      type: Number
+      type: String,
+      default: "normal",
+      validator: val => {
+        return isInArr(val, ["small", "normal", "large"]);
+      }
     }
   },
   data() {
@@ -82,14 +86,6 @@ export default {
     },
     innerStyles() {
       let style = {};
-      if (this.currentSize) {
-        let baseWidth = 15,
-          baseHeight = 15,
-          basePadding = 4;
-        style["width"] = this.p2r(baseWidth * this.currentSize);
-        style["height"] = this.p2r(baseHeight * this.currentSize);
-        style["padding"] = this.p2r(basePadding * this.currentSize);
-      }
 
       return style;
     },
@@ -111,8 +107,7 @@ export default {
         //设置group 的value
         if (this.parent) {
           this.parent.currentValue = result;
-        } 
-
+        }
       } else {
         // 单独使用
         result = optionChecked;

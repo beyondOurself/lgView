@@ -1,42 +1,17 @@
 <template>
   <div>
-    <hr />
-    <lg-row>
-      <lg-col span="12">
-        <lg-row center>
-          <lg-radio v-model="selectRes" label="apple" :size="1">
-            <lg-icon type="logo-octocat"></lg-icon>
-            <span>{{selectRes}}</span>
-          </lg-radio>
-        </lg-row>
+    <lg-row center>
+      <lg-col span="6" center>
+        <lg-checkbox  >小黑</lg-checkbox>
       </lg-col>
-      <lg-col span="12">
-        <lg-row center>
-          <lg-radio disabled>disabled</lg-radio>
-        </lg-row>
+      <lg-col span="6" center>
+        <lg-radio v-model="gouwa" label="狗娃娃">{{gouwa}}</lg-radio>
+      </lg-col>
+      <lg-col span="12" center>
+        <lg-radio label="狗蛋蛋" disabled>狗蛋</lg-radio>
       </lg-col>
     </lg-row>
-    <hr />
-    <lg-radio-group v-model="groupValue" :size=".8">
-      <lg-row>
-        <lg-col :flex="1">
-          <lg-row center>
-            <lg-radio v-model="gouwa"  label="狗娃">
-              <lg-icon type="logo-octocat"></lg-icon>
-              <span>{{gouwa}}</span>
-            </lg-radio>
-          </lg-row>
-        </lg-col>
-        <lg-col :flex="1">
-          <lg-row center>
-            <lg-radio v-model="goudan"  label="狗蛋">
-              <lg-icon type="logo-octocat"></lg-icon>
-              <span>{{goudan}}</span>
-            </lg-radio>
-          </lg-row>
-        </lg-col>
-      </lg-row>
-    </lg-radio-group>
+
     <hr />
     <lg-table :data="radioDatas"></lg-table>
   </div>
@@ -45,10 +20,7 @@
 export default {
   data() {
     return {
-      selectRes:false,
-      groupValue:"狗蛋", 
-      gouwa:"狗娃娃",
-      goudan:"狗蛋蛋",
+      gouwa: false,
       radioDatas: [
         {
           property: "value(radio)",
@@ -88,6 +60,14 @@ export default {
         }
       ]
     };
+  },
+  watch: {
+    gouwa(val) {
+      console.log("变动~" + val);
+    }
+  },
+  mounted() {
+    console.log(this.gouwa);
   }
 };
 </script>
