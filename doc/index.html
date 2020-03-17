@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>doc</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1 onclick="test">我就是我是颜色不一样的烟火</h1>
-    <h2>666</h2>
-    <button onclick="test">按钮</button>
+    <button id="btn">点击</button>
     <script>
-        function test (){
-            console.log("输出了~")
+        document.getElementById("btn").onclick = function(){
+            alert("愚蠢的地球人!")
         }
     </script>
 </body>
