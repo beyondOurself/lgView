@@ -1,3 +1,4 @@
 import List from './list.vue';
 import ListItem from './list-item.vue';
-export {List,ListItem}
+import ListTemplate from './list-item-template.vue';
+export {List,ListItem,ListTemplate}

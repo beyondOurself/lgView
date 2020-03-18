@@ -10,7 +10,7 @@ import Table from './components/table';
 import TagArea from './components/tag-area';
 import {Layout,Row,Col} from './components/layout';
 import {InputGroup,InputRow,Radio,RadioGroup,Checkbox,CheckboxGroup} from './components/form';
-import {List,ListItem} from './components/list';
+import {List,ListItem,ListTemplate} from './components/list';
 const comCssPrefix = 'Lg';
 //全局混淆
 Vue.mixin(globaltMixiner);
@@ -31,7 +31,8 @@ const components = {
   Radio,
   RadioGroup,
   Checkbox,
-  CheckboxGroup
+  CheckboxGroup,
+  ListTemplate
 }
 const lgView = {
    ...components

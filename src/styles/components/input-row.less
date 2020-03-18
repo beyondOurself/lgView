@@ -3,7 +3,6 @@
 .@{input-row-prefix} {
     & {
         height     : @input-row-input;
-        padding    : 0;
         display    : flex;
         align-items: center;
         position   : relative;
@@ -22,19 +21,23 @@
     }
 
     &-input {
-        height       : 100%;
-        width        : 100%;
-        border       : 0 !important;
-        border-radius: 0 !important;
-        padding      : 0;
-        outline      : none;
-        text-align   : right;
-
+        .position-center();
+        border          : 0 !important;
+        padding         : 0 !important;
+        margin          : 0 !important;
+        border-radius   : 0 !important;
+        background-color: transparent !important;
+        text-align      : right;
+        position        : absolute;
+        overflow        : hidden;
     }
 
     &-input-wrap {
-        flex   : 1;
-        padding: 0 @input-row-input-padding;
+        flex    : 1;
+        position: relative;
+        height  : @input-row-input;
+        border  : 0;
+        padding : 0;
     }
 
     &-icon {
@@ -47,20 +50,33 @@
         appearance        : none;
         -moz-appearance   : none;
         -webkit-appearance: none;
-        width             : 100%;
         border            : none;
         outline           : none;
         direction         : rtl;
         background        : none;
-        box-sizing        : content-box;
-        position          : relative;
-        border-right      : solid @input-row-select-border-right-width transparent;
-        padding-right           : @input-row-select-padding ;
+        margin            : auto 0;
+        padding           : 0;
+        height            : 100%;
+        line-height       : 100%;
+        padding-right     : .pr(25)[@res];
 
         &>option {
             direction: ltr;
         }
+
+        // background-color: red;
+
     }
 
+    &-select-wrap {
+        position: relative;
+    }
+
+    &-select-icon {
+        font-size: 125%;
+        position : absolute;
+        right    : 0;
+        top      : 0;
+    }
 
 }

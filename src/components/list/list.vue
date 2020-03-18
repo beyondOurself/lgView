@@ -1,24 +1,31 @@
 <template>
   <div :class="classes" :style="styles">
-     <h1>lg-list</h1>
+    <slot></slot>
   </div>
 </template>
 <script>
 const prefixCls = "lg-list";
 export default {
   name: "lList",
-  props: {},
+  props: {
+    border:{
+      type:Boolean,
+      default:false
+    }
+  },
   data() {
     return {};
   },
   computed: {
     classes() {
-        return[prefixCls,{}] 
+      return [prefixCls, {
+        [`${prefixCls}-border`] : this.border
+      }];
     },
     styles() {
-       let style = {}
+      let style = {};
 
-       return style
+      return style;
     }
   },
   methods: {}

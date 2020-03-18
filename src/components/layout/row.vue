@@ -32,7 +32,7 @@ export default {
     },
     justify: {
       type: String,
-      default: "start",
+      default: "center",
       validator: j =>
         isInArr(j, ["start", "end", "center", "space-around", "space-between"])
     },
@@ -49,7 +49,7 @@ export default {
     },
     items: {
       type: String,
-      default: "start",
+      default: "center",
       validator: i => isInArr(i, ["start", "end", "center", "baseline"])
     },
     center: {

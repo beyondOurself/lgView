@@ -6,7 +6,8 @@
 <script>
 import {
   findComponentsDownward,
-  setComponentPropertis
+  setComponentPropertis,
+  isInArr
 } from "../../utils/util";
 const prefixCls = "lg-radio-group";
 export default {
@@ -14,7 +15,11 @@ export default {
   props: {
     value: [String, Number],
     size: {
-      type: Number
+      type: String,
+      default: "normal",
+      validator: val => {
+        return isInArr(val, ["small", "normal", "large"]);
+      }
     }
   },
   data() {
@@ -31,7 +36,7 @@ export default {
       this.$emit("input", val);
     },
     size(val) {
-      this.refreshSize(val);
+      this.refreshSize(val, true);
     }
   },
   computed: {
@@ -46,7 +51,7 @@ export default {
   },
   methods: {
     getChildrens() {
-       return this.childrens = findComponentsDownward(this, "lRadio");
+      return (this.childrens = findComponentsDownward(this, "lRadio"));
     },
     setChecked() {
       let radios = this.getChildrens();
@@ -60,10 +65,10 @@ export default {
     },
     refreshSize(val) {
       let radios = this.getChildrens();
-      if (radios) {
+      if (radios && (this.size !== "normal" || sizeTage)) {
         setComponentPropertis(radios, { currentSize: val });
       }
-    },
+    }
   },
   mounted() {
     this.getChildrens();

@@ -13,12 +13,24 @@
         @input="handleInput"
         v-if="type == 'text'"
       />
-      <select :class="selectClasses" ref="selectEle" v-if="type=='select'" @change="handleSelect">
-        <option disabled>请选择</option>
-        <option v-for=" (item,index) in selectList " :key="index" :value="item.value">{{item.text}}</option>
-      </select>
+      <label :class="selectWrapClasses" v-if="type=='select'">
+        <select :class="selectClasses" ref="selectEle" @change="handleSelect">
+          <option disabled>请选择</option>
+          <option
+            v-for=" (item,index) in selectList "
+            :key="index"
+            :value="item.value"
+          >{{item.text}}</option>
+        </select>
+        <i :class="selectIconClasses"></i>
+      </label>
     </div>
-    <i :class="iconClasses" @click="handleClick" ref="iconEle" v-if="icon && isShow"></i>
+    <i
+      :class="iconClasses"
+      @click="handleClick"
+      ref="iconEle"
+      v-if="icon && isShow && type !== 'select' "
+    ></i>
     <slot></slot>
   </div>
 </template>
@@ -103,9 +115,15 @@ export default {
         }
       ];
     },
+    selectWrapClasses(){
+       return[`${prefixCls}-select-wrap`]
+    },
     selectClasses() {
       return [`${prefixCls}-select`];
     },
+    selectIconClasses(){
+      return[`${iconPrefixCls}`, [`${iconPrefixCls}-ios-arrow-forward`],`${prefixCls}-select-icon`]
+    }, 
     styles() {
       let style = {};
 

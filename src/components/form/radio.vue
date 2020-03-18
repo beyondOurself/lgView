@@ -18,7 +18,11 @@
   </label>
 </template>
 <script>
-import { isInArr,isBoolean, getParentByComponentNames } from "../../utils/util";
+import {
+  isInArr,
+  isBoolean,
+  getParentByComponentNames
+} from "../../utils/util";
 const prefixCls = "lg-radio";
 export default {
   name: "lRadio",
@@ -70,7 +74,11 @@ export default {
     innerClasses() {
       return [
         `${prefixCls}-inner`,
-        { [`${prefixCls}-inner-disabled`]: this.disabled }
+        {
+          [`${prefixCls}-inner-disabled`]: this.disabled,
+          [`${prefixCls}-inner-small`]: this.currentSize === "small",
+          [`${prefixCls}-inner-large`]: this.currentSize === "large"
+        }
       ];
     },
     labelClasses() {
@@ -117,7 +125,9 @@ export default {
     },
     refreshSize() {
       let group = this.parent;
-      group && group.refreshSize(group.size);
+      if (group) {
+        group.refreshSize(group.size);
+      }
     },
     getParent() {
       this.parent = getParentByComponentNames(this, "lRadioGroup");
@@ -125,9 +135,6 @@ export default {
   },
   mounted() {
     this.getParent();
-    this.refreshSize();
-  },
-  beforeDestroy() {
     this.refreshSize();
   }
 };

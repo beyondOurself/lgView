@@ -1,8 +1,8 @@
 <template>
-  <div :class="classes" :style="styles">
-    <slot></slot>
-    <div :class="shadeClasss" v-if="readonly"></div>
-  </div>
+  <form :class="classes" :style="styles">
+      <slot></slot>
+      <div :class="shadeClasss" v-if="readonly"></div>
+  </form>
 </template>
 <script>
 import {

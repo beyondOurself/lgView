@@ -1,6 +1,6 @@
 <template>
   <div :class="classes" :style="styles">
-    lg-list-item
+    <slot></slot>
   </div>
 </template>
 <script>
@@ -13,12 +13,12 @@ export default {
   },
   computed: {
     classes() {
-        return[prefixCls,{} ] 
+      return [prefixCls, {}];
     },
     styles() {
-       let style = {}
+      let style = {};
 
-       return style
+      return style;
     }
   },
   methods: {}

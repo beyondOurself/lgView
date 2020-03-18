@@ -1,17 +1,39 @@
 <template>
   <div>
-    <lg-row center>
-      <lg-col span="6" center>
-        <lg-checkbox  >小黑</lg-checkbox>
-      </lg-col>
-      <lg-col span="6" center>
+    <lg-row >
+      <lg-col :flex="1" center>
         <lg-radio v-model="gouwa" label="狗娃娃">{{gouwa}}</lg-radio>
       </lg-col>
-      <lg-col span="12" center>
+      <lg-col :flex="1" center>
         <lg-radio label="狗蛋蛋" disabled>狗蛋</lg-radio>
       </lg-col>
     </lg-row>
-
+    <br />
+    <lg-row >
+      <lg-col span="8" center>
+        <lg-radio label="狗娃娃" size="small">狗娃</lg-radio>
+      </lg-col>
+      <lg-col span="8" center>
+        <lg-radio label="狗蛋蛋" >狗蛋</lg-radio>
+      </lg-col>
+      <lg-col span="8" center>
+        <lg-radio label="狗蛋蛋" size="large" >狗剩</lg-radio>
+      </lg-col>
+    </lg-row>
+    <br />
+    <lg-radio-group size="small"> 
+    <lg-row  >
+      <lg-col span="8" center>
+        <lg-radio label="狗娃娃" size="large">狗娃</lg-radio>
+      </lg-col>
+      <lg-col span="8" center>
+        <lg-radio label="狗蛋蛋" >狗蛋</lg-radio>
+      </lg-col>
+      <lg-col span="8" center>
+        <lg-radio label="狗蛋蛋" size="large" >狗剩</lg-radio>
+      </lg-col>
+    </lg-row>
+    </lg-radio-group>
     <hr />
     <lg-table :data="radioDatas"></lg-table>
   </div>
@@ -67,7 +89,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.gouwa);
   }
 };
 </script>

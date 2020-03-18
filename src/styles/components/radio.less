@@ -1,12 +1,10 @@
 @radio-prefix       :~"@{css-prefix}radio";
 @radio-prefix-inner :~"@{radio-prefix}-inner";
-@radio-prefix-inner-small :~"@{radio-prefix-inner}-small";
-@radio-prefix-inner-large :~"@{radio-prefix-inner}-large";
 
 .@{radio-prefix} {
     &-wrap {
-        
-        display: flex;
+
+        display    : flex;
         align-items: center;
     }
 
@@ -20,8 +18,21 @@
         background-color: @white;
         border          : @radio-border;
         transition      : @radio-transition;
-        &-disabled{
-           background-color: @radio-inner-disabled-background-color;
+
+        &-disabled {
+            background-color: @radio-inner-disabled-background-color;
+        }
+
+        &-small {
+            height : @radio-inner-height-small;
+            width  : @radio-inner-width-small;
+            padding: @radio-inner-padding-small;
+        }
+
+        &-large {
+            height : @radio-inner-height-large;
+            width  : @radio-inner-width-large;
+            padding: @radio-inner-padding-large;
         }
     }
 
@@ -32,18 +43,14 @@
         border : 0;
 
         &:checked+.@{radio-prefix-inner} {
-            border-color: @radio-inner-checked-border-color ;
+            border-color    : @radio-inner-checked-border-color ;
             background-color: @radio-inner-checked-background-color;
         }
     }
 
-    &-label{
-       padding: @radio-label-padding;
+    &-label {
+        padding: @radio-label-padding;
     }
-    .@{radio-prefix-inner-small} {
-        
-    }
-    .@{radio-prefix-inner-large} {
 
-    }
+
 }

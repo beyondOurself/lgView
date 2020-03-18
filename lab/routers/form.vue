@@ -20,7 +20,7 @@
         <lg-row center>
           <lg-col span="12">
             <lg-row center>
-              <lg-radio v-model="selectRes" label="test" :size="0.8">
+              <lg-radio v-model="selectRes" label="test" size="small">
                 <lg-icon type="logo-octocat"></lg-icon>
                 <span>{{selectRes}}</span>
               </lg-radio>
