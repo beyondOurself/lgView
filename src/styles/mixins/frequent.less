@@ -24,3 +24,9 @@
     margin: 0 auto;
     text-align: center;
 }
+.deepening-bgcolor(@color,@ratio){
+     @res:lighten(@color, @ratio);
+}
+.active-shadow(@color,@fuzzy){
+    @res:@color 0 0 @fuzzy;
+}

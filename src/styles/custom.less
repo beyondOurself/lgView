@@ -54,6 +54,11 @@
 @transition-time        : .25s;
 @ease-in-out            : ease-in-out;
 
+// active
+@active-light-ratio:10%;
+@active-shadow-fuzzy:.pr(4)[@res];
+// --------
+
 //card 
 @card-margin: @margin-base; 
 @card-padding: @padding-base; 
@@ -141,3 +146,30 @@
 @list-item-margin-left:@padding-base;
 @list-item-padding:@padding-base;
 @list-item-height:.pr(40)[@res];
+
+//button
+@button-size-base:10; 
+@button-size-small-rate:0.8;
+@button-size-large-rate:1.2;
+@button-padding:.pr(@button-size-base)[@res];
+@button-padding-small:.pr(@button-size-base * @button-size-small-rate)[@res];
+@button-padding-large:.pr(@button-size-base * @button-size-large-rate)[@res];
+@button-fontsize-small: @button-size-small-rate; 
+@button-fontsize-large: @button-size-large-rate; 
+@button-active-primary-bgclor:.deepening-bgcolor(@primary-color,@active-light-ratio)[@res];
+@button-active-success-bgclor:.deepening-bgcolor(@success-color,@active-light-ratio)[@res];
+@button-active-warning-bgclor:.deepening-bgcolor(@warning-color,@active-light-ratio)[@res];
+@button-active-danger-bgclor:.deepening-bgcolor(@danger-color,@active-light-ratio)[@res];
+//shadow >>>
+@button-active-default-shadow:.active-shadow(@shadow-color ,@active-shadow-fuzzy)[@res];
+@button-active-primary-shadow:.active-shadow(@primary-color,@active-shadow-fuzzy)[@res];
+@button-active-success-shadow:.active-shadow(@success-color,@active-shadow-fuzzy)[@res];
+@button-active-warning-shadow:.active-shadow(@warning-color,@active-shadow-fuzzy)[@res];
+@button-active-danger-shadow:.active-shadow(@danger-color,@active-shadow-fuzzy)[@res];
+//shadow <<<
+//border >>>
+@button-ghost-primary-border-color:@primary-color;
+@button-ghost-success-border-color:@success-color;
+@button-ghost-warning-border-color:@warning-color;
+@button-ghost-danger-border-color:@danger-color;
+//border <<<

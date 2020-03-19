@@ -6,7 +6,7 @@ const prefixCls = "lg-card";
 export default {
   name: "Card",
   props:{
-    styleBox:{
+    styler:{
       type:Object, 
       default: () =>{ return {}}
     },
@@ -23,13 +23,14 @@ export default {
       ]
     },
     styles(){
+      let style = this.styler; 
       if(this.pad){
-         this.styleBox.padding =this.p2r(this.pad);
+         style["padding"] =this.p2r(this.pad);
       }
       if(this.mar){
-         this.styleBox.margin = this.p2r(this.mar);
+         style["margin"] = this.p2r(this.mar);
       }
-      return this.styleBox;
+      return style;
     }
   },
   methods: {}

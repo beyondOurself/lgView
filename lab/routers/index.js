@@ -11,15 +11,15 @@ import radio from './radio.vue'
 import checkbox from './checkbox.vue'
 
 export default {
+    form,
+    list,
+    radio,
+    checkbox,
     icon,
     myComponent,
     button,
     table,
     card,
     tagArea,
-    layout,
-    form,
-    list,
-    radio,
-    checkbox
+    layout
 }

@@ -29,7 +29,7 @@ export default {
     },
     flex: {
       type: Number,
-      default: 0
+      default: 1
     },
     center:{
       type:Boolean,

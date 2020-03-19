@@ -1,5 +1,157 @@
 @button-prefix: ~"@{css-prefix}button";
 
 .@{button-prefix} {
-    & {}
+    & {
+        margin          : 0;
+        padding         : 0;
+        box-sizing      : border-box;
+        border          : @border;
+        color           : @text-color;
+        background-color: @default-color ;
+        padding         : @button-padding;
+        border-radius   : @border-radius-normal;
+
+    }
+
+
+    &-primary,
+    &-success,
+    &-warning,
+    &-danger {
+        color: @default-color;
+
+        &:active {
+            color: @default-color;
+        }
+    }
+
+    &-default {
+        background-color: @default-color;
+
+        &:active {
+            box-shadow: @button-active-default-shadow ;
+        }
+    }
+
+    &-primary {
+        background-color: @primary-color;
+
+        &:active {
+            background-color: @button-active-primary-bgclor;
+            box-shadow      : @button-active-primary-shadow;
+        }
+    }
+
+    &-success {
+        background-color: @success-color;
+
+        &:active {
+            background-color: @button-active-success-bgclor;
+            box-shadow      : @button-active-success-shadow;
+        }
+    }
+
+    &-warning {
+        background-color: @warning-color;
+
+        &:active {
+            background-color: @button-active-warning-bgclor;
+            box-shadow      : @button-active-warning-shadow;
+        }
+    }
+
+    &-danger {
+        background-color: @danger-color;
+
+        &:active {
+            background-color: @button-active-danger-bgclor;
+            box-shadow      : @button-active-danger-shadow;
+        }
+    }
+
+    &-default-ghost,
+    &-primary-ghost,
+    &-success-ghost,
+    &-warning-ghost,
+    &-danger-ghost,
+    &-default-ghost,
+    &-text {
+        background-color: transparent;
+
+    }
+
+    &-default-ghost {
+        color       : @default-color;
+        border-color: @default-color ;
+        font-weight : 600;
+
+        &:active {
+            border-color: @primary-color;
+            box-shadow  : @button-active-primary-shadow ;
+        }
+    }
+
+    &-primary-ghost {
+        color       : @primary-color;
+        border-color: @button-ghost-primary-border-color ;
+
+        &:active {
+            box-shadow: @button-active-primary-shadow;
+            color     : @primary-color ;
+
+        }
+    }
+
+    &-success-ghost {
+        color       : @success-color;
+        border-color: @button-ghost-success-border-color ;
+
+        &:active {
+            box-shadow: @button-active-success-shadow;
+            color     : @success-color ;
+
+        }
+    }
+
+    &-warning-ghost {
+        color       : @warning-color;
+        border-color: @button-ghost-warning-border-color ;
+
+        &:active {
+            box-shadow: @button-active-warning-shadow;
+            color     : @warning-color ;
+        }
+    }
+
+    &-danger-ghost {
+        color       : @danger-color;
+        border-color: @button-ghost-danger-border-color ;
+
+        &:active {
+            box-shadow: @button-active-danger-shadow;
+            color     : @danger-color ;
+        }
+    }
+
+    &-text {
+        border: none;
+
+        &:active {
+            color     : @text-color;
+            box-shadow: @button-active-default-shadow;
+        }
+    }
+
+    &-small {
+
+        padding  : @button-padding-small;
+        font-size: @button-fontsize-small ;
+    }
+
+    &-large {
+        padding  : @button-padding-large;
+        font-size: @button-fontsize-large ;
+    }
+
+
 }

@@ -2,11 +2,39 @@
 
 .@{list-template-prefix} {
     & {
-        &-main{
+        padding-right: .pr(5)[@res];
+        >div{
             display: flex;
-            >div.icon{
-                margin-right: .pr(5)[@res];
+        }
+        &-main {
+            >div.icon {
+                height          : .pr(50)[@res];
+                width           : .pr(50)[@res];
+                border-radius: .pr(4)[@res];
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 180%;
+                background-color: lightgray;
             }
+            >div.content-wrap {
+                width: 85%;
+                >div {
+                    padding      : 0 .pr(5)[@res];
+                    overflow     : hidden;
+                    text-overflow: ellipsis;
+                    white-space  : nowrap;
+
+                }
+                >div.title>h4{
+                    display: inline-block
+                }
+            }
+        }
+        &-footer{
+            padding-top: .pr(5)[@res];
+            justify-content: space-between;
         }
     }
 }
