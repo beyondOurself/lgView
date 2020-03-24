@@ -1,57 +1,38 @@
-
 <template>
-  <div class="box">
-    <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view class="rv-block"></router-view>
-    <nav >
-      <ul class="box-ul" >
-        <li v-for="(item,index) in items" :key='index'>
-          <router-link :to="item">{{item}}</router-link>
-        </li>
-      </ul>
-    </nav>
-  </div>
+     <div class="container">
+         <div class="nav"></div>
+        <div class="main">
+            
+
+        </div>
+        <div class="footer"></div>
+     </div>
 </template>
 <script>
-import rous from './routers'
-const nameList = []; 
- for (const key in rous) {
-   if (rous.hasOwnProperty(key)) {
-       nameList.push(`/${key}`);
-   }
- }
 export default {
-  data() {
-    return {
-      items:nameList
-    };
-  }
-};
-</script>
-<style lang='less' >
-//局部样式
-.box {
-  .box-ul {
-  text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding:0; 
-  }
-  .box-ul > li {
-    list-style: none;
-    background-color: aquamarine;
-    border-radius: 0.1rem;
-    margin: 0.2rem;
-    padding: 0.2rem 10%;
-    white-space: nowrap;
-  }
-  a {
-    text-decoration: none;
-  }
-  .rv-block {
-    background-color: #eaff56;
-    padding: 0.5rem 0;
-  }
+  
 }
+</script>
+<style lang="less" >
+   body,html {
+       margin: 0; 
+       padding: 0; 
+       height: 100%;
+       font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+   }
+  .container {
+    height: 100%;
+     .nav{
+        height: 10%; 
+        background-color: red;
+     }
+     .main{
+       height: 100%;
+       background-color: green;
+     }
+     .footer{
+       height: 100px;
+       background-color: black;
+     }
+  }
 </style>
