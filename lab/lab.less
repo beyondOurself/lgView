@@ -1,0 +1,234 @@
+/*** custom start ***/
+// --- global ---
+@shadow-base: 0 1px 6px rgba(0, 0, 0, .2);
+@base-color : #f6a000;
+@font-color : #515a6e;
+@border     : solid 1px #dcdee2;
+// --- part  ---
+@navigater-directory-w: 18%;
+
+/*** custom end ***/
+body,
+html {
+    margin : 0;
+    padding: 0;
+    height : 100%;
+    color  : @font-color;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+        Microsoft YaHei, SimSun, sans-serif;
+    background-color: #eeeeee;
+
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding        : 0;
+    margin         : 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    background-color: #fafafa;
+    border-radius   : 4px;
+    font-size       : .6em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+// 主界面 start 
+
+.home {
+    height: 100%;
+
+    &-header,
+    &-main,
+    &-footer {
+        background-color: #ffffff;
+        box-shadow      : @shadow-base;
+    }
+
+    //头部
+    &-header {
+        position: fixed;
+        height  : 65px;
+        width   : 100%;
+        top     : 0;
+        left    : 0;
+
+        div:first-child {
+            margin        : 0 25px;
+            line-height   : 65px;
+            vertical-align: middle;
+
+            >div {
+                display: inline-block;
+            }
+        }
+
+        div.logo {
+            height         : 45px;
+            width          : 170px;
+            background     : url(./imgs/logo.png) no-repeat;
+            background-size: 100% 100%;
+            display        : inline-block;
+        }
+
+        div.navs {
+            float: right;
+
+            >ul {
+                list-style-type: none;
+                margin         : 0;
+                padding        : 0;
+
+                >li {
+                    display: inline-block;
+                    padding: 0 25px;
+
+                    >a {
+                        color         : @base-color;
+                        opacity       : .5;
+                        padding-bottom: 20px;
+
+                        &:hover {
+                            opacity      : 1;
+                            border-bottom: solid 2px @base-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.search {
+            margin-left: 5%;
+
+            >input[type="text"] {
+                border          : none;
+                border-bottom   : solid 1px @base-color;
+                padding-left    : 1.5em;
+                font-size       : .8em;
+                line-height     : 1.5;
+                width           : 150%;
+                border-radius   : 5px;
+                background-color: transparent;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    //主体
+    &-main {
+        overflow     : hidden;
+        margin-top   : 80px;
+        margin-bottom: 15px;
+
+        >div {
+            margin-bottom : -9999px;
+            padding-bottom: 9999px;
+        }
+
+        //左侧导航栏
+        >div.navigaters {
+            float      : left;
+            width      : @navigater-directory-w;
+            margin-left: -100%;
+            min-width  : 200px;
+            padding    : 15px;
+
+            li.navigater {
+
+                >h3,
+                h5 {
+                    margin: 5px 0;
+                }
+
+                >h5 {
+                    //title
+                    padding-left: .5em;
+                    color       : #999;
+                }
+
+                >ul {
+                    padding-left: 1em;
+
+                    >li {
+                        height: 25px;
+                        margin: 10px;
+                        &:hover::after {
+                            content         : "";
+                            display         : block;
+                            height          : 2px;
+                            background-color: @base-color;
+                        }
+
+                        >a {
+                            // link
+                            color    : @font-color;
+                            font-size: .9em;
+
+                            &:visited {
+                                background-color: @base-color;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        >div.container-wrapper {
+            width: 100%;
+            float: left;
+
+            //主体内容
+            >div.container {
+                margin     : 0 @navigater-directory-w;
+                border-left: @border;
+                min-height : 1000px;
+                padding    : 10px;
+
+
+            }
+        }
+
+        //目录
+        >div.directory {
+            float      : left;
+            width      : @navigater-directory-w;
+            margin-left: -@navigater-directory-w;
+
+        }
+    }
+
+    //尾部
+    .home-footer {
+        background-color: #212121;
+        color           : #ffffff;
+
+        div.footer-container {
+            box-sizing: border-box;
+            width     : 80%;
+            min-height: 80px;
+            padding   : 20px 0;
+            margin    : 0 auto;
+
+            >div.author {
+                width     : 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// 主界面 end

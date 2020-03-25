@@ -1,0 +1,58 @@
+[
+    {
+        "grounpName": "组件",
+        "categories": [
+            
+            {
+                "title": "基础",
+                "items": [
+                    {
+                        "value": "button",
+                        "text": "按钮"
+                    },
+                    {
+                        "value": "card",
+                        "text": "卡片"
+                    },
+                    {
+                        "value": "button",
+                        "text": "按钮"
+                    },
+                    {
+                        "value": "button",
+                        "text": "按钮"
+                    },
+                    {
+                        "value": "button",
+                        "text": "按钮"
+                    },
+                    {
+                        "value": "button",
+                        "text": "按钮"
+                    },
+                    {
+                        "value": "button",
+                        "text": "按钮"
+                    }
+                ]
+            },
+            {
+                "title": "表单",
+                "items": [
+                    {
+                        "value": "form",
+                        "text": "表单列表"
+                    },
+                    {
+                        "value": "checkbox",
+                        "text": "复选框"
+                    },
+                    {
+                        "value": "radio",
+                        "text": "单选按钮"
+                    }
+                ]
+            }
+        ]
+    }
+]

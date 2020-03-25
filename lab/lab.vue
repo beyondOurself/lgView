@@ -1,38 +1,87 @@
 <template>
-     <div class="container">
-         <div class="nav"></div>
-        <div class="main">
-            
-
+  <div :class="classes">
+    <div :class="headerClasses">
+      <div class>
+        <div class="logo"></div>
+        <div class="navs">
+          <ul>
+            <li>
+              <a href="#">组件</a>
+            </li>
+            <li>
+              <a href="#">简历</a>
+            </li>
+            <li>
+              <a href="#">关于</a>
+            </li>
+          </ul>
         </div>
-        <div class="footer"></div>
-     </div>
+        <div class="search">
+          <input type="text" placeholder="搜索" />
+        </div>
+      </div>
+    </div>
+    <div :class="mainClasses">
+      <div class="container-wrapper">
+        <div class="container">
+          <router-view></router-view>
+          <!-- <span v-highlight>
+            <pre>
+                  <code>
+                    
+                  </code>
+              </pre>
+          </span>-->
+        </div>
+      </div>
+      <div class="navigaters">
+        <ul>
+          <li class="navigater" v-for="(group,index) in datas" :key="index">
+            <h3 v-text="group.grounpName"></h3>
+            <template v-for="(category) in group.categories">
+              <h5 v-text="category.title"></h5>
+              <ul>
+                <li v-for="(item,index) in category.items" :key="index">
+                  <router-link :to="item.value" v-text="item.text"></router-link>
+                </li>
+              </ul>
+            </template>
+          </li>
+        </ul>
+      </div>
+      <div class="directory"></div>
+    </div>
+    <div :class="footerClasses">
+      <div class="footer-container">
+        <div class="author">
+          <span>沈灿龙@2020</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
+import datas from "./data/navigater.json";
+const prefix = "home";
 export default {
-  
-}
-</script>
-<style lang="less" >
-   body,html {
-       margin: 0; 
-       padding: 0; 
-       height: 100%;
-       font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
-   }
-  .container {
-    height: 100%;
-     .nav{
-        height: 10%; 
-        background-color: red;
-     }
-     .main{
-       height: 100%;
-       background-color: green;
-     }
-     .footer{
-       height: 100px;
-       background-color: black;
-     }
+  data() {
+    return {
+      datas
+    };
+  },
+  computed: {
+    classes() {
+      return [`${prefix}`];
+    },
+    headerClasses() {
+      return [`${prefix}-header`];
+    },
+    mainClasses() {
+      return [`${prefix}-main`];
+    },
+    footerClasses() {
+      return [`${prefix}-footer`];
+    }
   }
-</style>
+};
+</script>
