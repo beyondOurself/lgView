@@ -26,7 +26,6 @@ module.exports = {
                 )
             }
             ,
-            
             { //加载图片
                 test: /\.(png|jpg|gif)$/,
                 use: [
@@ -39,7 +38,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 1556222  
+                            limit: 1556222
                         }
                     }
                 ]

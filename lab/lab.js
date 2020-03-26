@@ -1,16 +1,20 @@
 import Vue from 'vue'
 import App from './lab.vue'
-import lgView from '../src/index'
+import {Explain} from  './compoents'
 import VueRouter from 'vue-router'
-import routers from './routers'
+import routers from './routers/lab'
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
 import  HighLisht from './plugins/highlight'
+import 'element-ui/lib/theme-chalk/index.css';
 import './lab.less'; 
+const comCssPrefix = 'Lg';
+let compoents = {
+  Explain
+}
+Object.keys(compoents).forEach(key => {
+  Vue.component(`${comCssPrefix}${key}`, compoents[key]);
+})
 Vue.use(HighLisht);
-Vue.use(lgView, {
-  capture: true
-});
 Vue.use(VueRouter);
 Vue.use(ElementUI);
 //路由的配置

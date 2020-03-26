@@ -21,5 +21,5 @@ export default {
     table,
     card,
     tagArea,
-    layout
+    layout,
 }

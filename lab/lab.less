@@ -1,11 +1,15 @@
 /*** custom start ***/
 // --- global ---
+@css-prefix : "lg-";
 @shadow-base: 0 1px 6px rgba(0, 0, 0, .2);
 @base-color : #f6a000;
 @font-color : #515a6e;
-@border     : solid 1px #dcdee2;
+@border-color:#dcdee2;
+@border-type:solid; 
+@border-width: 1px;
+@border     : @border-type @border-width @border-color;
 // --- part  ---
-@navigater-directory-w: 18%;
+@navigater-directory-w: 250px;
 
 /*** custom end ***/
 body,
@@ -42,12 +46,11 @@ code {
 }
 
 
-
 // 主界面 start 
 
 .home {
-    height: 100%;
-
+    height   : 100%;
+    min-width:800px;
     &-header,
     &-main,
     &-footer {
@@ -83,7 +86,9 @@ code {
 
         div.navs {
             float: right;
-
+            @media (max-width: 550px) {
+                visibility: hidden;
+            }
             >ul {
                 list-style-type: none;
                 margin         : 0;
@@ -109,6 +114,10 @@ code {
 
         div.search {
             margin-left: 5%;
+
+            @media (max-width: 850px) {
+                visibility: hidden;
+            }
 
             >input[type="text"] {
                 border          : none;
@@ -148,37 +157,41 @@ code {
 
             li.navigater {
 
-                >h3,
-                h5 {
+                >h3 {
                     margin: 5px 0;
                 }
 
-                >h5 {
-                    //title
-                    padding-left: .5em;
-                    color       : #999;
-                }
+                >div.categories {
 
-                >ul {
-                    padding-left: 1em;
+                    >h5 {
+                        //title
+                        padding-left: .5em;
+                        color       : #999;
+                        margin      : 5px 0;
+                    }
 
-                    >li {
-                        height: 25px;
-                        margin: 10px;
-                        &:hover::after {
-                            content         : "";
-                            display         : block;
-                            height          : 2px;
-                            background-color: @base-color;
-                        }
+                    >ul {
+                        padding-left: 1em;
 
-                        >a {
-                            // link
-                            color    : @font-color;
-                            font-size: .9em;
+                        >li {
+                            height: 25px;
+                            margin: 10px;
 
-                            &:visited {
+                            &:hover::after {
+                                content         : "";
+                                display         : block;
+                                height          : 2px;
                                 background-color: @base-color;
+                            }
+
+                            >a {
+                                // link
+                                color    : @font-color;
+                                font-size: .9em;
+
+                                &:visited {
+                                    background-color: @base-color;
+                                }
                             }
                         }
                     }
@@ -193,28 +206,32 @@ code {
 
             //主体内容
             >div.container {
-                margin     : 0 @navigater-directory-w;
+                margin-left: @navigater-directory-w;
                 border-left: @border;
                 min-height : 1000px;
-                padding    : 10px;
-
-
             }
         }
 
         //目录
-        >div.directory {
-            float      : left;
-            width      : @navigater-directory-w;
-            margin-left: -@navigater-directory-w;
-
-        }
+        // >div.directory {
+        //     float      : left;
+        //     width      : @navigater-directory-w;
+        //     margin-left: -@navigater-directory-w;
+        //     >div.gifContainer{
+        //         height         : 200px;
+        //         width          : 200px;
+        //         outline        : solid 1px red;
+        //         background     : lightgray url('./imgs/Animation.gif') no-repeat;
+        //         background-size: 100% 100%;
+        //     }
+        // }
     }
 
     //尾部
     .home-footer {
         background-color: #212121;
         color           : #ffffff;
+
 
         div.footer-container {
             box-sizing: border-box;
@@ -232,3 +249,99 @@ code {
 }
 
 // 主界面 end
+
+// 基础组件 start
+
+.show-wrap {
+
+
+    >div.content-wrap {
+        float: left;
+        width: 100%;
+
+        >div.content {
+            margin-right: 400px;
+            padding: 10px;
+            @media (max-width: 1200px) {
+                margin-right: 280px;
+
+            }
+        }
+    }
+
+    >div.directory {
+        float      : left;
+        width      : 400px;
+        margin-left: -400px;
+
+        @media (max-width: 800px) {
+            visibility: hidden;
+
+        }
+
+        >div.divWrap {
+            position: fixed;
+            right   : 0;
+
+            >.imgWrap {
+
+                width           : 400px;
+                height          : 680px;
+                background-image: url("./imgs/iphone.png");
+                background-size : 100% 100%;
+                position        : relative;
+
+                @media (max-width: 1200px) {
+                    width : 280px;
+                    height: 480px;
+
+                }
+
+                >img {
+                    height  : 69%;
+                    width   : 76%;
+                    position: absolute;
+                    top     : 0;
+                    bottom  : 0;
+                    left    : 0;
+                    right   : 0;
+                    margin  : auto;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+//基础组件 end 
+
+// explain start 
+@explain-prefix: ~"@{css-prefix}explain";
+
+.@{explain-prefix} {
+    & {  
+         box-shadow: @shadow-base;
+         border: @border;
+         border-radius: 5px;
+         padding: 5px;
+    }
+
+    &-description{
+        // background-color: pink;
+        padding: 15px;
+        border-bottom: dashed 1px @border-color;
+    }
+
+    &-code{
+        // background-color: lightgreen;
+        pre,code{
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+    }
+}
+
+// explain end

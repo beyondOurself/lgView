@@ -2,7 +2,19 @@
     {
         "grounpName": "组件",
         "categories": [
-            
+            {
+                "title": "介绍",
+                "items": [
+                    {
+                        "value": "button",
+                        "text": "安装"
+                    },
+                    {
+                        "value": "show",
+                        "text": "展示"
+                    }
+                ]
+            },
             {
                 "title": "基础",
                 "items": [
@@ -11,28 +23,25 @@
                         "text": "按钮"
                     },
                     {
+                        "value": "icon",
+                        "text": "图标"
+                    }
+                ]
+            },
+            {
+                "title": "布局",
+                "items": [
+                    {
+                        "value": "layout",
+                        "text": "layout布局"
+                    },
+                    {
+                        "value": "list",
+                        "text": "列表"
+                    },
+                    {
                         "value": "card",
                         "text": "卡片"
-                    },
-                    {
-                        "value": "button",
-                        "text": "按钮"
-                    },
-                    {
-                        "value": "button",
-                        "text": "按钮"
-                    },
-                    {
-                        "value": "button",
-                        "text": "按钮"
-                    },
-                    {
-                        "value": "button",
-                        "text": "按钮"
-                    },
-                    {
-                        "value": "button",
-                        "text": "按钮"
                     }
                 ]
             },
@@ -40,16 +49,20 @@
                 "title": "表单",
                 "items": [
                     {
-                        "value": "form",
-                        "text": "表单列表"
-                    },
-                    {
-                        "value": "checkbox",
-                        "text": "复选框"
+                        "value": "input",
+                        "text": "input输入框"
                     },
                     {
                         "value": "radio",
-                        "text": "单选按钮"
+                        "text": "radio 单选框"
+                    },
+                    {
+                        "value": "checkbox",
+                        "text": "多选框"
+                    },
+                    {
+                        "value": "form",
+                        "text": "表单"
                     }
                 ]
             }

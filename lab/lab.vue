@@ -1,5 +1,6 @@
 <template>
   <div :class="classes">
+    <!-- 头部 -->
     <div :class="headerClasses">
       <div class>
         <div class="logo"></div>
@@ -9,7 +10,7 @@
               <a href="#">组件</a>
             </li>
             <li>
-              <a href="#">简历</a>
+              <a href="#">经验</a>
             </li>
             <li>
               <a href="#">关于</a>
@@ -21,38 +22,37 @@
         </div>
       </div>
     </div>
+    <!-- 中间 -->
     <div :class="mainClasses">
       <div class="container-wrapper">
+        <!-- 内容 -->
         <div class="container">
           <router-view></router-view>
-          <!-- <span v-highlight>
-            <pre>
-                  <code>
-                    
-                  </code>
-              </pre>
-          </span>-->
         </div>
       </div>
+      <!-- 左侧导航 -->
       <div class="navigaters">
         <ul>
           <li class="navigater" v-for="(group,index) in datas" :key="index">
             <h3 v-text="group.grounpName"></h3>
-            <template v-for="(category) in group.categories">
+            <div class="categories" v-for="(category,index) in group.categories" :key="index">
               <h5 v-text="category.title"></h5>
               <ul>
                 <li v-for="(item,index) in category.items" :key="index">
                   <router-link :to="item.value" v-text="item.text"></router-link>
                 </li>
               </ul>
-            </template>
+            </div>
           </li>
         </ul>
       </div>
-      <div class="directory"></div>
+      <!-- 右侧目录 -->
+      <!-- <div class="directory">
+      </div> -->
     </div>
-    <div :class="footerClasses">
-      <div class="footer-container">
+    <!-- 底部 -->
+    <div :class="footerClasses " >
+      <div class="footer-container baColor">
         <div class="author">
           <span>沈灿龙@2020</span>
         </div>
@@ -66,7 +66,8 @@ const prefix = "home";
 export default {
   data() {
     return {
-      datas
+      datas,
+      gifUrl:"Animation.gif"
     };
   },
   computed: {

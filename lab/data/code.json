@@ -1,0 +1,16 @@
+[
+    {
+        "tag":"", 
+        "value":["<template>",
+            "  <div :class=\"Classes\">",
+            "    <div :class=\"descriptionClasses\">666</div>",
+            "    <div :class=\"codeClasses\">",
+            "      <pre v-highlight>",
+            "            <code v-text=\"datas\">",
+            "           </code>",
+            "       </pre>",
+            "    </div>",
+            "  </div>",
+            "</template>"]
+    }
+]
