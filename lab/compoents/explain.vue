@@ -1,10 +1,16 @@
 <template>
   <div :class="Classes">
-    <div :class="descriptionClasses">基础用法</div>
+    <div :class="descriptionClasses">
+      <div :class="contentWrapClasses">
+        <span v-text="title"></span>
+        <div :class="contentClasses">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
     <div :class="codeClasses">
       <pre v-highlight>
-            <code v-text="datas">
-                {{}}
+            <code v-text="data">
            </code>
        </pre>
     </div>
@@ -12,12 +18,15 @@
 </template>
 <script>
 const prefixClass = "lg-explain";
-import codeData from "../data/code.json";
 export default {
-  data() {
-    return {
-        datas:""
-    };
+  props: {
+    title: {
+      type: String,
+      default: "基础用法"
+    },
+    data:{
+        type:String
+    }
   },
   computed: {
     Classes() {
@@ -26,12 +35,15 @@ export default {
     descriptionClasses() {
       return [`${prefixClass}-description`];
     },
+    contentWrapClasses() {
+      return [`${prefixClass}-description-content-wrap`];
+    },
+    contentClasses() {
+      return [`${prefixClass}-description-content`];
+    },
     codeClasses() {
       return [`${prefixClass}-code`];
     }
-  }, 
-  mounted(){
-       this.datas = codeData[0].value;
-  }
+  },
 };
 </script>

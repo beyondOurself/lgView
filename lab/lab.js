@@ -1,22 +1,22 @@
 import Vue from 'vue'
 import App from './lab.vue'
-import {Explain} from  './compoents'
+import {Explain,Table} from  './compoents'
 import VueRouter from 'vue-router'
 import routers from './routers/lab'
-import ElementUI from 'element-ui';
 import  HighLisht from './plugins/highlight'
-import 'element-ui/lib/theme-chalk/index.css';
 import './lab.less'; 
 const comCssPrefix = 'Lg';
 let compoents = {
-  Explain
+  Explain,
+  Table
 }
 Object.keys(compoents).forEach(key => {
   Vue.component(`${comCssPrefix}${key}`, compoents[key]);
 })
+
+
 Vue.use(HighLisht);
 Vue.use(VueRouter);
-Vue.use(ElementUI);
 //路由的配置
 const routes = [];
 Object.keys(routers).forEach(key => {

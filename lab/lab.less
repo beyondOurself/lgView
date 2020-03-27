@@ -1,13 +1,14 @@
 /*** custom start ***/
 // --- global ---
-@css-prefix : "lg-";
-@shadow-base: 0 1px 6px rgba(0, 0, 0, .2);
-@base-color : #f6a000;
-@font-color : #515a6e;
-@border-color:#dcdee2;
-@border-type:solid; 
-@border-width: 1px;
-@border     : @border-type @border-width @border-color;
+@css-prefix   : "lg-";
+@shadow-base  : 0 1px 6px rgba(0, 0, 0, .2);
+@base-color   : #f6a000;
+@font-color   : #515a6e;
+@border-color : #dcdee2;
+@border-type  : solid;
+@border-width : 1px;
+@border-radius: 5px;
+@border       : @border-type @border-width @border-color;
 // --- part  ---
 @navigater-directory-w: 250px;
 
@@ -50,7 +51,8 @@ code {
 
 .home {
     height   : 100%;
-    min-width:800px;
+    min-width: 800px;
+
     &-header,
     &-main,
     &-footer {
@@ -65,6 +67,7 @@ code {
         width   : 100%;
         top     : 0;
         left    : 0;
+        z-index : 2;
 
         div:first-child {
             margin        : 0 25px;
@@ -86,9 +89,11 @@ code {
 
         div.navs {
             float: right;
+
             @media (max-width: 550px) {
                 visibility: hidden;
             }
+
             >ul {
                 list-style-type: none;
                 margin         : 0;
@@ -141,6 +146,16 @@ code {
         overflow     : hidden;
         margin-top   : 80px;
         margin-bottom: 15px;
+        position     : relative;
+
+        &::after {
+            content    : " ";
+            position   : absolute;
+            height     : 100%;
+            border-left: @border;
+            top        : 0;
+            left       : 250px;
+        }
 
         >div {
             margin-bottom : -9999px;
@@ -211,20 +226,6 @@ code {
                 min-height : 1000px;
             }
         }
-
-        //目录
-        // >div.directory {
-        //     float      : left;
-        //     width      : @navigater-directory-w;
-        //     margin-left: -@navigater-directory-w;
-        //     >div.gifContainer{
-        //         height         : 200px;
-        //         width          : 200px;
-        //         outline        : solid 1px red;
-        //         background     : lightgray url('./imgs/Animation.gif') no-repeat;
-        //         background-size: 100% 100%;
-        //     }
-        // }
     }
 
     //尾部
@@ -250,10 +251,10 @@ code {
 
 // 主界面 end
 
-// 基础组件 start
+// 展示基础view start
 
 .show-wrap {
-
+    display: inline;
 
     >div.content-wrap {
         float: left;
@@ -261,10 +262,21 @@ code {
 
         >div.content {
             margin-right: 400px;
-            padding: 10px;
+            padding     : 10px;
+            padding-left: 20px;
+
+
+            >div.lg-explain {
+                margin-bottom: 40px;
+            }
+
             @media (max-width: 1200px) {
                 margin-right: 280px;
 
+            }
+
+            @media (max-width: 1000px) {
+                margin-right: 0;
             }
         }
     }
@@ -274,8 +286,9 @@ code {
         width      : 400px;
         margin-left: -400px;
 
-        @media (max-width: 800px) {
-            visibility: hidden;
+        @media (max-width: 1000px) {
+            visibility      : hidden;
+            display         : none;
 
         }
 
@@ -285,14 +298,14 @@ code {
 
             >.imgWrap {
 
-                width           : 400px;
+                width           : 375px;
                 height          : 680px;
                 background-image: url("./imgs/iphone.png");
                 background-size : 100% 100%;
                 position        : relative;
 
                 @media (max-width: 1200px) {
-                    width : 280px;
+                    width : 275px;
                     height: 480px;
 
                 }
@@ -315,33 +328,78 @@ code {
 
 }
 
-//基础组件 end 
+//展示基础view end 
 
 // explain start 
 @explain-prefix: ~"@{css-prefix}explain";
 
 .@{explain-prefix} {
-    & {  
-         box-shadow: @shadow-base;
-         border: @border;
-         border-radius: 5px;
-         padding: 5px;
+    & {
+        padding      : 5px;
+        border       : @border;
+        box-shadow   : @shadow-base;
+        border-radius: @border-radius;
     }
 
-    &-description{
-        // background-color: pink;
-        padding: 15px;
+    &-description {
+        margin-top   : 20px;
         border-bottom: dashed 1px @border-color;
+
+        &-content-wrap {
+            border-top: @border;
+
+            >span {
+                position        : absolute;
+                margin-top      : -.8em;
+                margin-left     : 2em;
+                background-color: white;
+                outline         : solid 10px white;
+                white-space     : nowrap;
+            }
+        }
+
+        &-content {
+            padding: 15px;
+        }
     }
 
-    &-code{
-        // background-color: lightgreen;
-        pre,code{
-            margin: 0;
-            padding: 0;
+    &-code {
+
+        pre,
+        code {
+            margin   : 0;
+            padding  : 0;
             font-size: 1.2em;
         }
     }
 }
 
 // explain end
+
+// table start 
+@table-prefix: ~"@{css-prefix}table";
+
+.@{table-prefix} {
+    & {
+        border-collapse: collapse;
+        width          : 100%;
+        text-align     : center;
+
+        caption {
+            text-align: left;
+        }
+
+        th,
+        td {
+            border : @border;
+            padding: 5px;
+        }
+
+        th {
+            color           : #999;
+            background-color: #f7f7f7;
+        }
+    }
+}
+
+// table end 

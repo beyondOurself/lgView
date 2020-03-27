@@ -6,14 +6,8 @@
         <div class="logo"></div>
         <div class="navs">
           <ul>
-            <li>
-              <a href="#">组件</a>
-            </li>
-            <li>
-              <a href="#">经验</a>
-            </li>
-            <li>
-              <a href="#">关于</a>
+            <li v-for="(item,index) in nas" :key="index">
+              <a href="#" v-text="item"></a>
             </li>
           </ul>
         </div>
@@ -46,15 +40,12 @@
           </li>
         </ul>
       </div>
-      <!-- 右侧目录 -->
-      <!-- <div class="directory">
-      </div> -->
     </div>
     <!-- 底部 -->
     <div :class="footerClasses " >
       <div class="footer-container baColor">
         <div class="author">
-          <span>沈灿龙@2020</span>
+          <span>{{auther}}</span>
         </div>
       </div>
     </div>
@@ -62,12 +53,14 @@
 </template>
 <script>
 import datas from "./data/navigater.json";
+import {nas,auther} from "./data/common.json";
 const prefix = "home";
 export default {
   data() {
     return {
       datas,
-      gifUrl:"Animation.gif"
+      auther,
+      nas
     };
   },
   computed: {

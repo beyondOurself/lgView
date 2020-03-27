@@ -1,2 +1,3 @@
 import Explain from "./explain.vue";
-export {Explain}
+import Table from "./table.vue";
+export {Explain,Table}
