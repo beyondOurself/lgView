@@ -1,37 +1,39 @@
-# webpack4-vue-base
 
-#### 介绍
-webpack4搭建的vue基础项目
+#### 背景:
+    
+    在一个月黑风高加班的夜晚,一位年轻人眼睛死死盯着屏幕,编辑器里的代码像流光一样不断闪烁着,指尖飞快的跳动,眉宇之间渗出了丝丝冷汗.
+稍许,键盘声缓慢的落下,看着缓慢进展的项目,年轻人眼眸里失去了光彩,哎! 今晚的约会肯定泡汤了,又得被一顿责怪. 眼睛里看向了vscode里不断粘贴复制的代码.艹~~~ 我要解放~要自由~.
 
-#### 软件架构
-软件架构说明
+#### 概述:
+     对公司 APP 端常用功能模块,进行了vue组件的封装.
+
+#### 介绍:
+
+ 本项目是基于 webpack 4.x 构建开发的vue组件的Libary. css 主要使用 less 样式预解析器.
+
+项目基本集成了代码压缩,测试,构建.
+
+#### 安装
+ 
+本项目是基于公司 h5+ 项目开发的所以没有发布到npm(主要是懒),直接引入dist目录下 js,css文件 就好. 
+
+`
+ <link href="lgView.min.css" rel="stylesheet"></head>
+<script type="text/javascript" src="lgView.min.js"></script>
+`
+
+#### build 
+
+运行构建命名,dis目录下生成构建好的文件.
+`
+ npm run build
+`
+
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0327/155731_fec61355_2037786.png "屏幕截图.png")
+
+#### 相关连接
+
+[文档:http://shencanlong.gitee.io/lgviewui/#/](http://shencanlong.gitee.io/lgviewui/#/)
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
