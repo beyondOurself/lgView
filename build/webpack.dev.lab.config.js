@@ -1,10 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const common = require('./webpack.base.config.js');
 module.exports = merge(common, {
     entry: {
@@ -86,8 +84,6 @@ module.exports = merge(common, {
         }),
         //压缩
         new OptimizeCSSAssetsPlugin({}),
-        //清除 /dist 文件夹
-        new CleanWebpackPlugin({}),
     ],
     mode: "development"
 });
