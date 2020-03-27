@@ -21,8 +21,7 @@
       <div class="container-wrapper">
         <!-- 内容 -->
         <div class="container">
-          
-          <router-view> <h2>6666</h2></router-view>
+          <router-view> </router-view>
         </div>
       </div>
       <!-- 左侧导航 -->
