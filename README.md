@@ -17,17 +17,25 @@
  
 本项目是基于公司 h5+ 项目开发的所以没有发布到npm(主要是懒),直接引入dist目录下 js,css文件 就好. 
 
-`
+
+```
+
  <link href="lgView.min.css" rel="stylesheet"></head>
 <script type="text/javascript" src="lgView.min.js"></script>
-`
+```
+
+
 
 #### build 
 
 运行构建命名,dis目录下生成构建好的文件.
+
+```
 `
  npm run build
 `
+```
+
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/0327/155731_fec61355_2037786.png "屏幕截图.png")
 
