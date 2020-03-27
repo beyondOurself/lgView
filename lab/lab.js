@@ -27,6 +27,7 @@ console.log(routers["show"])
 
 // routes.push({path:'/', redirect: '/show' })
 routes.push({path:'/', component:routers["show"] })
+window.alert("666")
 const router = new VueRouter({
   routes 
 })
