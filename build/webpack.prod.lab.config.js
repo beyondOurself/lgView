@@ -21,7 +21,6 @@ module.exports = merge(common, {
                 test: /\.less$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'vue-style-loader',
                     {
                         loader: "css-loader",
                         options: {
@@ -42,23 +41,10 @@ module.exports = merge(common, {
                     }
                 ]
             },
-            { //加载scss
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    {
-                        loader: 'sass-loader',
-                    },
-                ]
-            },
             { //加载css
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: { importLoaders: 1 }
