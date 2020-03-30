@@ -18,6 +18,7 @@
  
 本项目是基于公司 h5+ 项目开发的所以没有发布到npm(主要是懒),直接引入dist目录下 js,css文件 就好. 
 
+ **cdn 引入** 
 
 ```
  <link href="lgView.min.css" rel="stylesheet"></head>
@@ -25,6 +26,13 @@
  <script type="text/javascript" src="lgView.min.js"></script>
 
 ```
+ **npm 安装** 
+
+
+```
+ npm install lg-view --save
+```
+
 
 #### build 
 
