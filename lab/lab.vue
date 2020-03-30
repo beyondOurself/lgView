@@ -21,7 +21,8 @@
       <div class="container-wrapper">
         <!-- 内容 -->
         <div class="container">
-          <router-view> </router-view>
+          <!-- <img :src="logo" alt="666"> -->
+          <router-view></router-view>
         </div>
       </div>
       <!-- 左侧导航 -->
@@ -54,13 +55,15 @@
 <script>
 import datas from "./data/navigater.json";
 import {nas,auther} from "./data/common.json";
+import logo from "./imgs/logo.png";
 const prefix = "home";
 export default {
   data() {
     return {
       datas,
       auther,
-      nas
+      nas,
+      logo
     };
   },
   computed: {

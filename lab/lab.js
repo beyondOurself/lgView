@@ -13,8 +13,6 @@ let compoents = {
 Object.keys(compoents).forEach(key => {
   Vue.component(`${comCssPrefix}${key}`, compoents[key]);
 })
-
-
 Vue.use(HighLisht);
 Vue.use(VueRouter);
 //路由的配置
@@ -22,12 +20,7 @@ const routes = [];
 Object.keys(routers).forEach(key => {
   routes.push({ path: `/${key}`, component: routers[key] });
 })
-
-console.log(routers["show"])
-
-// routes.push({path:'/', redirect: '/show' })
-routes.push({path:'/', component:routers["show"] })
-window.alert("666")
+routes.push({path:'/', redirect: '/show' })
 const router = new VueRouter({
   routes 
 })

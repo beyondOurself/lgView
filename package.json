@@ -1,14 +1,25 @@
 {
-  "name": "webpack4-vue-test",
+  "name": "lg-view",
+  "description": "lgView",
   "version": "1.0.0",
-  "private": true,
+  "author": "shencanlong<562172151@qq.com>",
   "license": "MIT",
+  "main": "dist/lgView.min.js",
+  "jsnext:main": "src/index.js",
+  "private": false,
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "webpack  --config  build/webpack.prod.dist.config.js",
     "lab": "webpack-dev-server  --open  --port 8989 --config  build/webpack.dev.lab.config.js",
     "lab:prod": "webpack  --config  build/webpack.prod.lab.config.js",
     "app": "webpack --watch --config  build/webpack.dev.app.config.js",
     "test": "webpack --watch --config  build/webpack.test.config.js"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.11"
   },
   "dependencies": {},
   "devDependencies": {
