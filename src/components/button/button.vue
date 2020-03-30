@@ -5,7 +5,7 @@
 import { isInArr } from "../../utils/util";
 const prefixCls = "lg-button";
 export default {
-  name: "Button",
+  name: "lButton",
   props: {
     value: {
       type: String,

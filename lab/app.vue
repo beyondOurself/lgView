@@ -50,7 +50,7 @@ export default {
     text-decoration: none;
   }
   .router-view-block {
-    background-color: #eaff56;
+    background-color: #ffffff;
     padding: 0.5rem 0;
   }
 }

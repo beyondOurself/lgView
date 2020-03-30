@@ -1,2 +1,4 @@
 import show from "./show.vue";
-export default {show}
+import install from "./install.vue";
+import button from "./button.vue";
+export default {show,install,button}

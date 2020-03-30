@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Hljs from 'highlight.js'
-import 'highlight.js/styles/lightfair.css'
+import 'highlight.js/styles/atelier-dune-light.css'
 let Highlight = {}
 Highlight.install = function (Vue, options) {
   Vue.directive('highlight', function (el) {
