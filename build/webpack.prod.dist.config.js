@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const common = require('./webpack.base.config.js');
 
@@ -91,6 +92,14 @@ module.exports = merge(common, {
         }),
         //清除 /dist 文件夹
         new CleanWebpackPlugin({}),
+        //压缩版
+        new CompressionPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|css)$/,
+            threshold: 10240,
+            minRatio: 0.8
+        })
     ],
     mode: "production"
 });
