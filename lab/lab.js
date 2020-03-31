@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './lab.vue'
-import {Explain,Table,Highlight} from  './compoents'
+import {Explain,Table,Highlight,Fills,Container} from  './compoents'
 import VueRouter from 'vue-router'
 import routers from './routers/lab'
 import  HighLisht from './plugins/highlight'
@@ -9,7 +9,9 @@ const comCssPrefix = 'Lg';
 let compoents = {
   Explain,
   Table,
-  Highlight
+  Highlight,
+  Fills,
+  Container
 }
 Object.keys(compoents).forEach(key => {
   Vue.component(`${comCssPrefix}${key}`, compoents[key]);

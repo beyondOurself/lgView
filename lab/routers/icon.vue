@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lg-icon type="md-albums" size="40" color="red"></lg-icon>
+    <lg-icon type="md-albums"  color="red"></lg-icon>
     <lg-icon type="md-albums" size="50" color="green"></lg-icon>
     <lg-icon type="md-albums" size="60" color="blue"></lg-icon>
     <hr />

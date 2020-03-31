@@ -164,11 +164,12 @@ code {
 
         //左侧导航栏
         >div.navigaters {
-            float      : left;
-            width      : @navigater-directory-w;
-            margin-left: -100%;
-            min-width  : 200px;
-            padding    : 15px;
+            float        : left;
+            width        : @navigater-directory-w;
+            margin-left  : -100%;
+            min-width    : 200px;
+            padding      : 15px;
+            padding-right: 0;
 
             li.navigater {
 
@@ -189,8 +190,10 @@ code {
                         padding-left: 1em;
 
                         >li {
-                            height: 25px;
-                            margin: 10px;
+                            height      : 25px;
+                            margin      : 10px;
+                            margin-right: 0;
+
 
                             &:hover::after {
                                 content         : "";
@@ -203,10 +206,17 @@ code {
                                 // link
                                 color    : @font-color;
                                 font-size: .9em;
+                                display  : inline-block;
+                                width    : 100%;
+                            }
 
-                                &:visited {
-                                    background-color: @base-color;
-                                }
+                            >a.router-link-active {
+                                border-right    : solid 2px @base-color;
+                                line-height     : 2;
+                                color           : @base-color;
+                                background-color: fade(@base-color, 5%);
+                                ;
+
                             }
                         }
                     }
@@ -280,7 +290,7 @@ code {
             }
         }
 
-        >div.install-content{
+        >div.install-content {
             margin-right: 0;
 
         }
@@ -292,8 +302,8 @@ code {
         margin-left: -400px;
 
         @media (max-width: 1000px) {
-            visibility      : hidden;
-            display         : none;
+            visibility: hidden;
+            display   : none;
 
         }
 
@@ -408,16 +418,49 @@ code {
 }
 
 // table end 
-// table start 
+
+// highlight start 
 @highlight-prefix: ~"@{css-prefix}highlight";
 
 .@{highlight-prefix} {
     & {
+        padding         : 3px;
+        margin          : 0 3px;
+        color           : #fa795e;
+        border-radius   : @border-radius;
         background-color: #fff5f5;
-        color: #fa795e;
-        padding: 3px;
-        border-radius: @border-radius;
+
+
     }
 }
 
-// table end 
+// highlight end 
+
+// fills star
+@fills-prefix: ~"@{css-prefix}fills";
+
+.@{fills-prefix} {
+    & {
+        padding: 2% 5%;
+        display: inline-block;
+        border-radius: @border-radius;
+        border: @border;
+        line-height: 1.2em;
+    }
+    &-color{
+        color: white;
+    }
+
+}
+
+
+// fills end
+
+//speicfication start
+@speicfication-prefix:~"speicfication";
+.@{speicfication-prefix}{
+    & .lg-fills {
+        margin: 10px;
+    }
+}
+//speicfication end
