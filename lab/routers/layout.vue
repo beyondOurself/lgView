@@ -1,108 +1,43 @@
 <template>
   <div>
-    <lg-row :gutter="50" type="grid">
-      <lg-col span="6">
+    <h4>span="3,6" flex="1,2" :gutter="10"</h4>
+    <lg-row :gutter="10" >
+      <lg-col span="3">
         <div style="background-color: red;">1-1</div>
       </lg-col>
       <lg-col span="6">
         <div style="background-color: pink;">1-2</div>
       </lg-col>
-      <lg-col span="6">
+      <lg-col :flex="1">
         <div style="background-color: blue;">1-3</div>
       </lg-col>
-      <lg-col span="6">
+      <lg-col :flex="2">
         <div style="background-color: green;">1-4</div>
       </lg-col>
     </lg-row>
-    <lg-row :gutter="10">
-      <lg-col span="6">
-        <div style="background-color: red;">2-1</div>
+    <h4>order="4,3,2,1"</h4>
+    <lg-row :gutter="10" >
+      <lg-col span="3" :order="4">
+        <div style="background-color: red;">1-1</div>
       </lg-col>
-      <lg-col span="6" :offset="6">
-        <div style="background-color: pink;">2-2</div>
+      <lg-col span="6" :order="3">
+        <div style="background-color: pink;">1-2</div>
       </lg-col>
-    </lg-row>
-    <lg-row :gutter="10" justify="center">
-      <lg-col span="6">
-        <div style="background-color: red;">3-1</div>
+      <lg-col :flex="1" :order="2">
+        <div style="background-color: blue;">1-3</div>
       </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">3-2</div>
-      </lg-col>
-    </lg-row>
-    <lg-row :gutter="10" justify="space-around" direction="column">
-      <lg-col span="6">
-        <div style="background-color: red;">4-1</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">4-2</div>
+      <lg-col :flex="2" :order="1">
+        <div style="background-color: green;">1-4</div>
       </lg-col>
     </lg-row>
-    <lg-row :gutter="10" justify="space-between" wrap="wrap">
-      <lg-col span="6">
-        <div style="background-color: red;">5-1</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">5-2</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">5-3</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">5-4</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">5-5</div>
-      </lg-col>
+    <h4>sjustify,items,wrap </h4>
+    <lg-row justify="space-around" items="start" wrap="wrap" style="background-color:lightgray; height:1rem">
+        <div style="background-color: red; height:40px; width:100px;">2-1</div>
+        <div style="background-color: pink; height:40px; width:100px;">2-2</div>
+        <div style="background-color: blue; height:40px; width:100px;">2-3</div>
+        <div style="background-color: green; height:40px; width:100px;">2-4</div>
+        <div style="background-color: yellow; height:40px; width:100px;">2-5</div>
     </lg-row>
-    <lg-row
-      :gutter="10"
-      justify="end"
-      wrap="wrap"
-      style="height:2rem; background-color:gray; align-items:center; "
-    >
-      <lg-col span="6">
-        <div style="background-color: red;">6-1</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">6-2</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">6-3</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">6-4</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">6-5</div>
-      </lg-col>
-      <lg-col span="6">
-        <div style="background-color: pink;">6-6</div>
-      </lg-col>
-    </lg-row>
-    <lg-row
-      justify="center"
-      items="center"
-      style="height:2rem;align-items:center; background-color:#222; "
-    >
-      <div style="height:1rem; width:1rem; background-color:red;"></div>
-    </lg-row>
-    <lg-row :gutter="10" justify="center" wrap="wrap">
-      <lg-col :span="10">
-        <div style="background-color: pink;">7-5</div>
-      </lg-col>
-      <lg-col :flex="1">
-        <div style="background-color: pink;">7-5</div>
-      </lg-col>
-      <lg-col :flex="1">
-        <div style="background-color: pink;">7-5</div>
-      </lg-col>
-      <lg-col :flex="1">
-        <div style="background-color: pink;">7-5</div>
-      </lg-col>
-    </lg-row>
-    <hr />
-    <lg-table :data="datas"></lg-table>
   </div>
 </template>
 <script>

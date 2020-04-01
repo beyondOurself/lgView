@@ -1,8 +1,10 @@
 <template>
   <div>
-    <lg-icon type="md-albums"  color="red"></lg-icon>
-    <lg-icon type="md-albums" size="50" color="green"></lg-icon>
-    <lg-icon type="md-albums" size="60" color="blue"></lg-icon>
+    <lg-row>
+      <lg-icon type="md-albums" color="red"></lg-icon>
+      <lg-icon type="md-albums" size="28" color="green"></lg-icon>
+      <lg-icon type="md-albums" size="38" color="blue"></lg-icon>
+    </lg-row>
     <hr />
     <lg-table :data="datas"></lg-table>
   </div>
@@ -35,7 +37,7 @@ export default {
           declare: "其他图标类名",
           mold: "String",
           default: "-"
-        },
+        }
       ]
     };
   }

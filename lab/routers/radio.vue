@@ -21,7 +21,7 @@
       </lg-col>
     </lg-row>
     <br />
-    <lg-radio-group size="small"> 
+    <lg-radio-group size="small" v-model="radioGroupV"  > 
     <lg-row  >
       <lg-col span="8" center>
         <lg-radio label="狗娃娃" size="large">狗娃</lg-radio>
@@ -30,12 +30,13 @@
         <lg-radio label="狗蛋蛋" >狗蛋</lg-radio>
       </lg-col>
       <lg-col span="8" center>
-        <lg-radio label="狗蛋蛋" size="large" >狗剩</lg-radio>
+        <lg-radio label="狗剩剩" size="large" >狗剩</lg-radio>
       </lg-col>
     </lg-row>
     </lg-radio-group>
+    <lg-row>绑定组的值:{{radioGroupV}}</lg-row>
     <hr />
-    <lg-table :data="radioDatas"></lg-table>
+    <!-- <lg-table :data="radioDatas"></lg-table> -->
   </div>
 </template>
 <script>
@@ -43,6 +44,7 @@ export default {
   data() {
     return {
       gouwa: false,
+      radioGroupV:"狗蛋蛋",
       radioDatas: [
         {
           property: "value(radio)",

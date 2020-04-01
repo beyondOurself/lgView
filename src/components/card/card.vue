@@ -10,8 +10,8 @@ export default {
       type:Object, 
       default: () =>{ return {}}
     },
-    pad:[String,Number], 
-    mar:[String,Number]
+    gap:[String,Number], 
+    spacing:[String,Number]
   },
   data() {
     return {};
@@ -24,11 +24,11 @@ export default {
     },
     styles(){
       let style = this.styler; 
-      if(this.pad){
-         style["padding"] =this.p2r(this.pad);
+      if(this.gap){
+         style["padding"] =this.p2r(this.gap);
       }
-      if(this.mar){
-         style["margin"] = this.p2r(this.mar);
+      if(this.spacing){
+         style["margin"] = this.p2r(this.spacing);
       }
       return style;
     }

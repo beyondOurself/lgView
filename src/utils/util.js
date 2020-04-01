@@ -20,7 +20,7 @@ function isBoolean(boo) {
 function isFunction(fun) {
     return typeof fun === 'function'
 }
-function isNullOrEmpty(val){
+function isNullOrEmpty(val) {
     return null === val || "" === val;
 }
 
@@ -82,7 +82,6 @@ function getParentByComponentNames(context = {}, componentName = "", componentNa
 /** 设置组件的属性  */
 function setComponentPropertis(component, propertis) {
     let components = [];
-
     if (!isArray(component)) {
         components = [component];
     } else {
@@ -90,9 +89,11 @@ function setComponentPropertis(component, propertis) {
     }
     if (isObject(propertis) && components.length > 0) {
         for (let obj of components) {
-            for (let [key, value] of Object.entries(propertis)) {
-                obj[key] = value
-            }
+         for (const key in propertis) {
+             if (propertis.hasOwnProperty(key)) {
+                 obj[key] = propertis[key];
+             }
+         }
         }
     }
     return null;

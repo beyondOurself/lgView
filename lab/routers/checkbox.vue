@@ -7,7 +7,7 @@
       <lg-col :flex="1" center>
         <lg-radio disabled></lg-radio>
       </lg-col>-->
-      <lg-col :flex="1" center>
+      <lg-col :flex="1" >
         <lg-checkbox label="狗蛋" v-model="goudan">{{goudan}}</lg-checkbox>
       </lg-col>
       <lg-col :flex="1" center>

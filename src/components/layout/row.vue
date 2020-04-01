@@ -152,7 +152,7 @@ export default {
   methods: {
     refreshGutter(v = 0) {
       this.beforeRun(cols => {
-        v !== 0 && setComponentPropertis(cols, { gutter: v });
+        v !== 0 && setComponentPropertis(cols, { gutter: v })   ;
       });
     },
     refreshType(v = "") {
@@ -168,7 +168,10 @@ export default {
     beforeRun(fun) {
       if (!isFunction) return;
       let cols = getChildrensByComponetName(this, "lCol");
-      fun(cols);
+      if(cols){
+           fun(cols);
+      }
+   
     }
   },
   watch: {
@@ -182,7 +185,6 @@ export default {
     base(v) {
       this.refreshBase(v);
     }
-  },
-  mounted() {}
+  }
 };
 </script>

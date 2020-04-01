@@ -50,7 +50,8 @@ export default {
     styles() {
       let style = {};
       if (this.span) {
-        style.width = this.conversionRatio(this.span, this.base);
+        style["flex-basis"] = this.conversionRatio(this.span, this.base);
+
       }
 
       if (!isZero(this.gutter)) {
@@ -91,6 +92,7 @@ export default {
       return `${(+v / cardinalV) * 100}%`;
     },
     beforeRun(fun) {
+
       if (!isFunction(fun)) return;
       const row = getParentByComponentNames(this, "lRow");
       if (row) {
@@ -99,11 +101,6 @@ export default {
     }
   },
   mounted() {
-    this.refreshGutter();
-    this.refreshType();
-    this.refreshBase();
-  },
-  beforeDestroy() {
     this.refreshGutter();
     this.refreshType();
     this.refreshBase();

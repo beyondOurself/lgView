@@ -11,7 +11,7 @@
         ></lg-list-template>
       </lg-list-item   >
       <lg-list-item >
-          <lg-list-template :iconStyler="{backgroundColor:'red'}" >
+          <lg-list-template :iconStyler="{backgroundColor:'lightgray'}" >
             <lg-icon slot="icon" type="md-albums" size="40" color="lightgay"></lg-icon>
              <template slot="title">
                 <h4>这是标题呀呀</h4>
@@ -62,8 +62,8 @@ export default {
     };
   },
   methods:{
-    myAlert(val){
-      window.alert("点击拉~"+val)
+    myAlert(){
+      window.alert("点击拉~")
     }
   }
 };
