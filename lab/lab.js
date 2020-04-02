@@ -23,7 +23,7 @@ const routes = [];
 Object.keys(routers).forEach(key => {
   routes.push({ path: `/${key}`, component: routers[key] });
 })
-routes.push({path:'/', redirect: '/show' })
+routes.push({path:'/', redirect: '/install' })
 const router = new VueRouter({
   routes 
 })
