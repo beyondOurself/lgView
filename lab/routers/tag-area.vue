@@ -4,7 +4,7 @@
             <div>我就是我是颜色不一样的烟火</div>
         </lg-tag-area>
         <div class="interval-box"></div>
-        <lg-tag-area mar="10" label="mar变为1">
+        <lg-tag-area space="10" label="这是标题呀~">
             <div>我就是我是颜色不一样的烟火</div>
             <ul>
                 <li>1</li>
@@ -13,7 +13,6 @@
             </ul>
         </lg-tag-area>
         <hr />
-    <lg-table :data="datas"></lg-table>
     </div>
 </template>
 <script>

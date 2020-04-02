@@ -16,6 +16,7 @@
         placeholder="placeholder"
         readonly
       ></lg-input-row>
+      <lg-input-row></lg-input-row>
       <lg-input-row>
         <lg-row center>
           <lg-col span="12">

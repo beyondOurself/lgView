@@ -9,18 +9,14 @@
 <script>
 const prefixCls = "lg-tag-area";
 export default {
-  name: "TagArea",
+  name: "lTagArea",
   props: {
     label: {
       type: String,
       default: "无标题"
     },
-    mar: {
+    space: {
       type: [String, Number]
-    },
-    styleBox:{
-      type:Object,
-       default: () => { return {}}
     }
   },
   data() {
@@ -37,11 +33,13 @@ export default {
       return[`${prefixCls}-content`]
     },
     styles() {
-      let style = this.styleBox;
-      if (this.mar) {
-        style.margin = this.p2r(this.mar);
+      let styler = {}, 
+          space = this.space
+          ;
+      if (space) {
+        styler.margin = this.p2r(space);
       }
-      return style;
+      return styler;
     }
   },
   methods: {}

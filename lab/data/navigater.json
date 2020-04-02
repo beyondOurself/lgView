@@ -25,6 +25,10 @@
                     {
                         "value": "icon",
                         "text": "图标"
+                    },
+                    {
+                        "value": "tagArea",
+                        "text": "区域块"
                     }
                 ]
             },
@@ -48,10 +52,6 @@
             {
                 "title": "表单",
                 "items": [
-                    {
-                        "value": "input",
-                        "text": "input输入框"
-                    },
                     {
                         "value": "radio",
                         "text": "radio 单选框"

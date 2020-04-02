@@ -22,7 +22,6 @@ export default {
       data: icon["code"],
       table: icon["table"]
     };
-  },
-  mounted() {}
+  }
 };
 </script>

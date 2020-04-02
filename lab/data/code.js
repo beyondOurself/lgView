@@ -20,6 +20,132 @@ const template = {
     }
 
 }
+const tagArea = {
+    code: {
+        base:
+    ` 
+    <lg-tag-area space="10" label="这是标题呀~">
+        <div>我就是我是颜色不一样的烟火</div>
+    </lg-tag-area>
+    `,
+    }
+    ,
+    table: {
+        attribute: [
+            {
+                property: "label",
+                explain: "标题",
+                type: "String",
+                default: "无标题"
+            },
+            {
+                property: "space",
+                explain: "外边距",
+                type: "String,Number",
+                default: "0"
+            },
+
+        ]
+    }
+
+}
+const form = {
+    code: {
+        base:
+    ` 
+     <lg-input-group v-model="xxx">
+        <lg-input-row label="狗娃娃">
+        </lg-input-row>
+     </lg-input-group>
+    `,
+        icon:
+    ` 
+     <lg-input-group v-model="xxx">
+        <lg-input-row>
+        </lg-input-row>
+     </lg-input-group>
+    `,
+        flex:
+    ` 
+     <lg-input-group v-model="xxx">
+        <lg-input-row :labelFlex="1" :inputFlex="2">
+        </lg-input-row>
+     </lg-input-group>
+    `,
+        select:
+    ` 
+     <lg-input-group v-model="xxx">
+        <lg-input-row
+        :selectList="selectArr"
+        type="select"
+        icon="select"
+        v-model="value"
+        @click="handleClick()" ></lg-input-row>
+     </lg-input-group>
+    `,
+    }
+    ,
+    table: {
+        attribute: [
+            {
+                property: "value",
+                explain: "绑定的输入值",
+                type: "String",
+                default: "--"
+            },
+            {
+                property: "label",
+                explain: "标签的值",
+                type: "String",
+                default: "默认"
+            },
+            {
+                property: "type",
+                explain: "类型属性,包含值:(text,select)",
+                type: "String",
+                default: "text"
+            },
+            {
+                property: "icon",
+                explain: "内置图标,可选值:(text,select)",
+                type: "String",
+                default: "--"
+            },
+            {
+                property: "otherIcon",
+                explain: "引用其他图标的类名",
+                type: "String",
+                default: "--"
+            },
+            {
+                property: "placeholder",
+                explain: "input的占位符",
+                type: "String",
+                default: "请输入"
+            },
+            {
+                property: "readonly(row,group)",
+                explain: "只读",
+                type: "String",
+                default: "请输入"
+            },
+            {
+                property: "labelFlex",
+                explain: "标签的flex大小",
+                type: "Number",
+                default: "1"
+            },
+            {
+                property: "inputFlex",
+                explain: "输入框的flex大小",
+                type: "Number",
+                default: "1"
+            }
+
+        ]
+    }
+
+}
 const checkbox = {
     code: {
         base:
@@ -52,11 +178,42 @@ const checkbox = {
     table: {
         attribute: [
             {
-                property: "value",
-                explain: "绑定的值",
-                type: "--",
+                property: "value(checkbox)",
+                explain: "checkbox绑定的值,返回(true | false)",
+                type: "Boolean",
+                default: "false"
+            },
+            {
+                property: "label(checkbox)",
+                explain: "组合使用的时返回的值",
+                type: "String",
                 default: "--"
-            }
+            },
+            {
+                property: "disabled(checkbox)",
+                explain: "组件为无效状态",
+                type: "Boolean",
+                default: "false"
+            },
+            {
+                property: "size(checkbox)",
+                explain: "组件尺寸大小.包含值:small,normall,large",
+                type: "String",
+                default: "normal"
+            },
+            {
+                property: "value(checkboxGroup)",
+                explain: "组合使用时绑定的值.",
+                type: "String,Number,Array",
+                default: "--"
+            },
+            {
+                property: "size(checkboxGroup)",
+                explain: "整组的尺寸大小.包含值:small,normal,large",
+                type: "String",
+                default: "normal"
+            },
+            
 
         ]
     }
@@ -553,4 +710,4 @@ const button = {
 
 }
 
-export { button, install, show, icon, layout ,list ,card,radio,checkbox}
+export { button, install, show, icon, layout ,list ,card,radio,checkbox ,form,tagArea}

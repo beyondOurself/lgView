@@ -7,4 +7,6 @@ import list from "./list.vue";
 import card from "./card.vue";
 import radio from "./radio.vue";
 import checkbox from "./checkbox.vue";
-export default {show,install,button,icon,layout,list,card,radio,checkbox}
+import form from "./form.vue";
+import tagArea from "./tagArea.vue";
+export default {show,install,button,icon,layout,list,card,radio,checkbox,form,tagArea}
