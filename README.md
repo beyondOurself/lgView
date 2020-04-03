@@ -21,9 +21,9 @@
  **cdn 引入** 
 
 ```
- <link href="lgView.min.css" rel="stylesheet"></head>
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/browse/lg-view/dist/lgView.min.css">
 
- <script type="text/javascript" src="lgView.min.js"></script>
+ <script type="text/javascript" src="https://unpkg.com/browse/lg-view/dist/lgView.min.js"></script>
 
 ```
  **npm 安装** 
