@@ -8,7 +8,7 @@
 
 ## 概述:
 
-     对公司 APP(h5pluse + mui) 端常用UI模块,进行了vue组件的封装.
+     对公司 APP(h5pluse) 端常用UI模块,进行了vue组件的封装.
 
 ## 介绍:
 
