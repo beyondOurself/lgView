@@ -52,7 +52,7 @@
 
 ## 相关连接
 
-[文档:http://shencanlong.gitee.io/lgviewui/#/](http://shencanlong.gitee.io/lgviewui/#/)
+[文档:http://shencanlong.gitee.io/lgviewui/#/](https://bringoe.com/)
 
 
 
