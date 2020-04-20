@@ -52,7 +52,7 @@
 
 ## 相关连接
 
-[文档:https://bringoe.com/](https://bringoe.com/)
+[文档:https://lgview.bringoe.com/](https://lgview.bringoe.com/)
 
 
 
